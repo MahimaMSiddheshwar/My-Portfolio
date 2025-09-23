@@ -8,7 +8,7 @@ export const portfolioData = {
     email: "mahimamahabaleshwar@gmail.com",
     phone: "317-506-5008",
     linkedin: "https://www.linkedin.com/in/mahima-siddheshwar-98a585196",
-    bio: "Passionate Bioinformatics Analyst with expertise in genomics data analysis, machine learning, and quality control systems. Currently pursuing M.S. in Bioinformatics at Indiana University Indianapolis while gaining hands-on experience in LLM-powered genomics pipelines at Elucidata Corporation."
+    bio: "Passionate Bioinformatics Analyst with expertise in genomics data analysis, machine learning, and quality control systems. Pursued M.S. in Bioinformatics at Indiana University Indianapolis while gaining hands-on experience in LLM-powered genomics pipelines at Elucidata Corporation."
   },
 
   education: [

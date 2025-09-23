@@ -6,7 +6,7 @@ const About = () => {
   const { education, certifications, personal } = portfolioData;
 
   const stats = [
-    { icon: GraduationCap, label: "Years of Education", value: "7+" },
+    { icon: GraduationCap, label: "Years of Education", value: "5+" },
     { icon: Award, label: "Certifications", value: "1+" },
     { icon: Users, label: "Projects Completed", value: "10+" },
     { icon: TrendingUp, label: "Years Experience", value: "4+" }
