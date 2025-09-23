@@ -31,7 +31,7 @@ const About = () => {
           <div className="space-y-6">
             <h3 className="text-2xl font-bold text-slate-900 mb-4">My Journey</h3>
             <p className="text-lg text-slate-700 leading-relaxed">
-              Currently pursuing my Master's in Bioinformatics at Indiana University Indianapolis, I'm passionate about leveraging
+              Completed Master's in Bioinformatics at Indiana University Indianapolis, I'm passionate about leveraging
               computational methods to unlock insights from biological data. My journey began with a strong foundation in
               biotechnology, which led me to discover the fascinating intersection of biology and data science.
             </p>
