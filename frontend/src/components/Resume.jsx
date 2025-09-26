@@ -2,7 +2,8 @@ import React from 'react';
 import { Download, FileText, Eye, ExternalLink } from 'lucide-react';
 
 const Resume = () => {
-  const resumeUrl = 'https://customer-assets.emergentagent.com/job_fe566b14-932e-4a07-85ad-fa1d10965058/artifacts/npp8um87_Mahima%20M%20Siddheshwar%20-%20CV.pdf';
+  // ✅ Use local resume file from /public
+  const resumeUrl = '/resume.pdf';
 
   const handleDownload = () => {
     window.open(resumeUrl, '_blank');

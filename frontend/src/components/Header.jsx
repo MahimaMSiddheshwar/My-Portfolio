@@ -57,7 +57,7 @@ const Header = () => {
                 </button>
               ))}
               <button
-                onClick={() => window.open('https://customer-assets.emergentagent.com/job_fe566b14-932e-4a07-85ad-fa1d10965058/artifacts/npp8um87_Mahima%20M%20Siddheshwar%20-%20CV.pdf', '_blank')}
+                onClick={() => window.open('/resume.pdf', '_blank')}
                 className="bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center gap-2"
               >
                 <Download size={16} />
@@ -91,7 +91,7 @@ const Header = () => {
                 </button>
               ))}
               <button
-                onClick={() => window.open('https://customer-assets.emergentagent.com/job_fe566b14-932e-4a07-85ad-fa1d10965058/artifacts/npp8um87_Mahima%20M%20Siddheshwar%20-%20CV.pdf', '_blank')}
+                onClick={() => window.open('/resume.pdf', '_blank')}
                 className="bg-emerald-500 hover:bg-emerald-600 text-white px-3 py-2 rounded-md text-base font-medium w-full text-left transition-colors duration-200 flex items-center gap-2 mt-2"
               >
                 <Download size={16} />
