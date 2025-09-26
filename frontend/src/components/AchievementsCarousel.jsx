@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const AchievementsCarousel = ({ count = 16 }) => {
+const AchievementsCarousel = ({ count = 13 }) => {
   const images = Array.from(
     { length: count },
     (_, i) => `/achievements/award${i + 1}.jpg`
@@ -31,11 +31,11 @@ const AchievementsCarousel = ({ count = 16 }) => {
         My Achievements
       </h3>
 
-      <div className="relative w-full h-80 rounded-xl shadow-lg overflow-hidden">
+      <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] rounded-xl shadow-lg overflow-hidden flex justify-center items-center bg-white">
         <img
           src={images[current]}
           alt={`Achievement ${current + 1}`}
-          className="w-full h-full object-contain transition-all duration-700 bg-black"
+          className="max-h-[300px] sm:max-h-[400px] md:max-h-[500px] w-auto object-contain transition-all duration-700"
         />
 
         {/* Prev Button */}

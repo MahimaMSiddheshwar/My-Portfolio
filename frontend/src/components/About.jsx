@@ -54,7 +54,7 @@ const About = () => {
             </p>
 
             {/* Achievements Carousel ⬇️ */}
-            <AchievementsCarousel count={16} />
+            <AchievementsCarousel count={13} />
           </div>
 
           {/* Stats */}
