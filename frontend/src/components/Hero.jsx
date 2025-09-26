@@ -18,7 +18,7 @@ const Hero = () => {
         <div className="text-center">
           {/* Main content */}
           <div className="mb-8">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-snug">
+            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight pt-20 sm:pt-28">
               <span className="block">Hello, I'm</span>
               <span className="bg-gradient-to-r from-emerald-400 to-teal-300 bg-clip-text text-transparent">
                 {personal.displayName}
