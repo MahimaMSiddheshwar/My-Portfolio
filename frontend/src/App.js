@@ -11,29 +11,45 @@ import Blog from "./components/Blog";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import { Toaster } from "./components/ui/toaster";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import FunFactsTeaser from "./components/FunFactsTeaser"; // ✅ teaser for homepage
+import FunFacts from "./components/FunFacts"; // ✅ full gallery page
 
 function App() {
   useEffect(() => {
-    // Set document title
     document.title = "Mahima Siddheshwar | Bioinformatics & QC Portfolio";
   }, []);
 
   return (
-    <div className="App">
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Experience />
-        <Projects />
-        <Skills />
-        <Resume />
-        <Blog />
-        <Contact />
-      </main>
-      <Footer />
-      <Toaster />
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <Routes>
+          {/* Homepage with teaser */}
+          <Route
+            path="/"
+            element={
+              <main>
+                <Hero />
+                <About />
+                <Experience />
+                <Projects />
+                <Skills />
+                <Resume />
+                <Blog />
+                <FunFactsTeaser /> {/* ✅ teaser before Contact */}
+                <Contact />
+              </main>
+            }
+          />
+
+          {/* Full Fun Facts Page */}
+          <Route path="/funfacts" element={<FunFacts />} />
+        </Routes>
+        <Footer />
+        <Toaster />
+      </div>
+    </Router>
   );
 }
 
