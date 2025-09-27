@@ -116,7 +116,7 @@ const Resume = () => {
               {/* Note */}
               <div className="mt-8 text-center">
                 <p className="text-sm text-slate-500">
-                  PDF format • Updated January 2025 • Professional references available upon request
+                  PDF format • Updated September 2025 • Professional references available upon request
                 </p>
               </div>
             </div>
