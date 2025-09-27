@@ -88,7 +88,7 @@ export const portfolioData = {
       id: 1,
       title: "Machine Learning Pipeline for Breast Cancer Biomarker Discovery",
       category: "Machine Learning & Genomics",
-      period: "2024",
+      period: "2025",
       description: "Developed comprehensive ML pipeline integrating multiple genomics datasets to identify key biomarkers for breast cancer using advanced statistical methods.",
       technologies: ["Python", "R", "LASSO Regression", "SVM", "Logistic Regression", "GEO Datasets"],
       highlights: [
