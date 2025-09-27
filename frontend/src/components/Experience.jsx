@@ -35,25 +35,41 @@ const Experience = () => {
           {/* Experience items */}
           <div className="space-y-12">
             {experience.map((exp, index) => (
-              <div key={exp.id} className={`relative flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                }`}>
+              <div
+                key={exp.id}
+                className={`relative flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                  }`}
+              >
                 {/* Timeline dot */}
                 <div className="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-emerald-500 rounded-full border-4 border-white shadow-lg z-10"></div>
 
                 {/* Content */}
-                <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'
-                  } ml-16 md:ml-0`}>
+                <div
+                  className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'
+                    } ml-16 md:ml-0`}
+                >
                   <div className="bg-slate-50 rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                     {/* Header */}
                     <div className="flex flex-wrap items-start justify-between mb-4">
                       <div className="flex-1 min-w-0">
-                        <h3 className="text-xl font-bold text-slate-900 mb-1">{exp.title}</h3>
+                        <h3 className="text-xl font-bold text-slate-900 mb-1">
+                          {exp.title}
+                        </h3>
                         <div className="flex items-center gap-2 mb-2">
-                          <Building size={16} className="text-emerald-600 flex-shrink-0" />
-                          <span className="text-emerald-600 font-semibold">{exp.company}</span>
+                          <Building
+                            size={16}
+                            className="text-emerald-600 flex-shrink-0"
+                          />
+                          <span className="text-emerald-600 font-semibold">
+                            {exp.company}
+                          </span>
                         </div>
                       </div>
-                      <span className={`px-3 py-1 rounded-full text-xs font-medium ${getTypeColor(exp.type)}`}>
+                      <span
+                        className={`px-3 py-1 rounded-full text-xs font-medium ${getTypeColor(
+                          exp.type
+                        )}`}
+                      >
                         {exp.type}
                       </span>
                     </div>
@@ -71,15 +87,25 @@ const Experience = () => {
                     </div>
 
                     {/* Description */}
-                    <p className="text-slate-700 mb-6 leading-relaxed">{exp.description}</p>
+                    <p className="text-slate-700 mb-6 leading-relaxed">
+                      {exp.description}
+                    </p>
 
                     {/* Achievements */}
                     <div>
-                      <h4 className="font-semibold text-slate-900 mb-3">Key Achievements:</h4>
+                      <h4 className="font-semibold text-slate-900 mb-3">
+                        Key Achievements:
+                      </h4>
                       <ul className="space-y-2">
                         {exp.achievements.slice(0, 4).map((achievement, i) => (
-                          <li key={i} className="flex items-start gap-2 text-sm text-slate-700">
-                            <CheckCircle size={16} className="text-emerald-500 flex-shrink-0 mt-0.5" />
+                          <li
+                            key={i}
+                            className="flex items-start gap-2 text-sm text-slate-700"
+                          >
+                            <CheckCircle
+                              size={16}
+                              className="text-emerald-500 flex-shrink-0 mt-0.5"
+                            />
                             <span>{achievement}</span>
                           </li>
                         ))}
@@ -106,7 +132,14 @@ const Experience = () => {
             Interested in learning more about my professional journey?
           </p>
           <button
-            onClick={() => window.open('https://customer-assets.emergentagent.com/job_fe566b14-932e-4a07-85ad-fa1d10965058/artifacts/npp8um87_Mahima%20M%20Siddheshwar%20-%20CV.pdf', '_blank')}
+            onClick={() => {
+              const link = document.createElement('a');
+              link.href = '/resume.pdf'; // resume must be inside "public" folder
+              link.download = 'Mahima_Siddheshwar_Resume.pdf';
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+            }}
             className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200 shadow-lg hover:shadow-xl"
           >
             Download Full Resume
