@@ -12,8 +12,12 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import { Toaster } from "./components/ui/toaster";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import FunFactsTeaser from "./components/FunFactsTeaser"; // ✅ teaser for homepage
-import FunFacts from "./components/FunFacts"; // ✅ full gallery page
+
+// ✅ Correct spelling matches your files
+import AchievementsTeaser from "./components/AchievementsTeaser";
+import Achievements from "./components/Achievements";
+import FunFactsTeaser from "./components/FunFactsTeaser";
+import FunFacts from "./components/FunFacts";
 
 function App() {
   useEffect(() => {
@@ -25,7 +29,7 @@ function App() {
       <div className="App">
         <Header />
         <Routes>
-          {/* Homepage with teaser */}
+          {/* Homepage with teasers */}
           <Route
             path="/"
             element={
@@ -37,13 +41,16 @@ function App() {
                 <Skills />
                 <Resume />
                 <Blog />
-                <FunFactsTeaser /> {/* ✅ teaser before Contact */}
+                {/* ✅ Make sure correct names are used here */}
+                <AchievementsTeaser />
+                <FunFactsTeaser />
                 <Contact />
               </main>
             }
           />
 
-          {/* Full Fun Facts Page */}
+          {/* Full Pages */}
+          <Route path="/achievements" element={<Achievements />} />
           <Route path="/funfacts" element={<FunFacts />} />
         </Routes>
         <Footer />

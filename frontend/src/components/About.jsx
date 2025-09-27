@@ -1,10 +1,9 @@
 import React from 'react';
 import { GraduationCap, Award, Users, TrendingUp } from 'lucide-react';
 import portfolioData from '../data/mockData';
-import AchievementsCarousel from './AchievementsCarousel';  // ⬅️ Added import
 
 const About = () => {
-  const { education, certifications, personal } = portfolioData;
+  const { education, certifications } = portfolioData;
 
   const stats = [
     { icon: GraduationCap, label: "Years of Education", value: "5+" },
@@ -53,28 +52,25 @@ const About = () => {
               open-source projects, and sharing my knowledge through writing and mentoring.
             </p>
 
-            {/* Achievements Carousel ⬇️ */}
-            <AchievementsCarousel count={13} />
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-2 gap-6">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
-              >
-                <div className="flex items-center justify-center w-12 h-12 bg-emerald-100 rounded-lg mb-4 mx-auto">
-                  <stat.icon size={24} className="text-emerald-600" />
+            {/* Stats */}
+            <div className="grid grid-cols-2 gap-6">
+              {stats.map((stat, index) => (
+                <div
+                  key={index}
+                  className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+                >
+                  <div className="flex items-center justify-center w-12 h-12 bg-emerald-100 rounded-lg mb-4 mx-auto">
+                    <stat.icon size={24} className="text-emerald-600" />
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-slate-900 mb-2">{stat.value}</div>
+                    <div className="text-sm text-slate-600">{stat.label}</div>
+                  </div>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-slate-900 mb-2">{stat.value}</div>
-                  <div className="text-sm text-slate-600">{stat.label}</div>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        </div> {/* ✅ CLOSE grid here so Education & Certifications are separate */}
 
         {/* Education */}
         <div className="mb-16">
