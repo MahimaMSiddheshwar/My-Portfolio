@@ -36,22 +36,17 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled
-          ? "bg-slate-900/95 backdrop-blur-md shadow-lg"
-          : "bg-transparent"
+        ? "bg-slate-900/95 backdrop-blur-md shadow-lg"
+        : "bg-transparent"
         }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <h1 className="text-xl font-bold text-emerald-400">
-              Mahima Siddheshwar
-            </h1>
-          </div>
+          {/* Removed the "Mahima Siddheshwar" text/logo from here */}
 
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+          <div className="hidden md:block w-full">
+            <div className="flex justify-center items-baseline space-x-8">
               {menuItems.map((item) => (
                 <button
                   key={item.label}
@@ -65,7 +60,7 @@ const Header = () => {
               {/* Fun Facts link (always at end) */}
               <Link
                 to="/funfacts"
-                className="text-slate-300 hover:text-emerald-400 px-3 py-2 text-sm font-medium transition-colors duration-200"
+                className="text-slate-300 hover:text-emerald-400 px-3 py-2 text-sm font-medium transition-colors duration-200 whitespace-nowrap"
               >
                 Fun Facts
               </Link>
@@ -110,7 +105,7 @@ const Header = () => {
               <Link
                 to="/funfacts"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-slate-300 hover:text-emerald-400 block px-3 py-2 text-base font-medium w-full text-left transition-colors duration-200"
+                className="text-slate-300 hover:text-emerald-400 block px-3 py-2 text-base font-medium w-full text-left transition-colors duration-200 whitespace-nowrap"
               >
                 Fun Facts
               </Link>
