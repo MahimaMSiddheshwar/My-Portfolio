@@ -98,8 +98,7 @@ export const portfolioData = {
         "Identified key biomarkers with high predictive accuracy",
         "Created interpretability visualizations"
       ],
-      github: "#",
-      demo: "#"
+      github: "https://github.com/MahimaMSiddheshwar/ML-Projects",
     },
     {
       id: 2,
@@ -115,8 +114,7 @@ export const portfolioData = {
         "Performed functional enrichment analysis",
         "Generated interactive network visualizations"
       ],
-      github: "#",
-      demo: "#"
+      github: "https://github.com/MahimaMSiddheshwar/Comparative-Transcriptomic-Profiling-of-COVID-19-and-RSV",
     },
     {
       id: 3,
@@ -132,14 +130,13 @@ export const portfolioData = {
         "Created comprehensive documentation",
         "Established best practices for reproducibility"
       ],
-      github: "#",
-      demo: "#"
+      github: "https://github.com/MahimaMSiddheshwar/RNA-seq-Data-Analysis-A-Framework-for-Comparing-Computational-Pipelines-",
     },
     {
       id: 4,
       title: "Weather & Air Quality Dashboard",
       category: "Data Visualization & Analytics",
-      period: "2023",
+      period: "2025",
       description: "Created interactive dashboard for monitoring environmental data with real-time visualization capabilities.",
       technologies: ["Python", "Power BI", "Data Visualization", "API Integration"],
       highlights: [
@@ -149,7 +146,6 @@ export const portfolioData = {
         "Implemented geographic trend analysis"
       ],
       github: "#",
-      demo: "#"
     }
   ],
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Github, ExternalLink, Code, Database, Cpu, BarChart3, Filter } from 'lucide-react';
+import { Github, Code, Database, Cpu, BarChart3, Filter } from 'lucide-react';
 import portfolioData from '../data/mockData';
 
 const Projects = () => {
@@ -19,16 +19,6 @@ const Projects = () => {
       case 'Pipeline Development': return <Code size={20} />;
       case 'Data Visualization & Analytics': return <BarChart3 size={20} />;
       default: return <Code size={20} />;
-    }
-  };
-
-  const getCategoryColor = (category) => {
-    switch (category) {
-      case 'Machine Learning & Genomics': return 'bg-blue-100 text-blue-700';
-      case 'Network Analysis & Transcriptomics': return 'bg-purple-100 text-purple-700';
-      case 'Pipeline Development': return 'bg-emerald-100 text-emerald-700';
-      case 'Data Visualization & Analytics': return 'bg-orange-100 text-orange-700';
-      default: return 'bg-gray-100 text-gray-700';
     }
   };
 
@@ -56,8 +46,8 @@ const Projects = () => {
               key={category}
               onClick={() => setFilter(category)}
               className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${filter === category
-                ? 'bg-emerald-600 text-white shadow-md'
-                : 'bg-white text-slate-700 hover:bg-emerald-50 border border-slate-200'
+                  ? 'bg-emerald-600 text-white shadow-md'
+                  : 'bg-white text-slate-700 hover:bg-emerald-50 border border-slate-200'
                 }`}
             >
               {category}
@@ -83,7 +73,7 @@ const Projects = () => {
                     {project.period}
                   </span>
                 </div>
-                <span className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-white/20`}>
+                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-white/20">
                   {project.category}
                 </span>
               </div>
@@ -129,14 +119,17 @@ const Projects = () => {
 
                 {/* Action buttons */}
                 <div className="flex gap-3">
-                  <a
-                    href={project.github}
-                    className="flex items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-lg text-sm font-medium hover:bg-slate-800 transition-colors duration-200"
-                    onClick={(e) => e.preventDefault()}
-                  >
-                    <Github size={16} />
-                    View Code
-                  </a>
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-lg text-sm font-medium hover:bg-slate-800 transition-colors duration-200"
+                    >
+                      <Github size={16} />
+                      View Code
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
