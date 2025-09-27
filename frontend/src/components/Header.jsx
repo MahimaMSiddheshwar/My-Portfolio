@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, Download } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,30 +22,38 @@ const Header = () => {
     { label: "Experience", href: "#experience" },
     { label: "Projects", href: "#projects" },
     { label: "Skills", href: "#skills" },
-    { label: "Resume", href: "#resume" },
     { label: "Blog", href: "#blog" },
     { label: "Contact", href: "#contact" },
   ];
 
   const scrollToSection = (href) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsMenuOpen(false);
+    if (location.pathname !== "/") {
+      // If not on homepage, navigate first
+      navigate("/");
+      setTimeout(() => {
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 300); // wait for navigation
+    } else {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     }
+    setIsMenuOpen(false);
   };
 
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled
-        ? "bg-slate-900/95 backdrop-blur-md shadow-lg"
-        : "bg-transparent"
+          ? "bg-slate-900/95 backdrop-blur-md shadow-lg"
+          : "bg-transparent"
         }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          {/* Removed the "Mahima Siddheshwar" text/logo from here */}
-
           {/* Desktop Navigation */}
           <div className="hidden md:block w-full">
             <div className="flex justify-center items-baseline space-x-8">
@@ -57,7 +67,7 @@ const Header = () => {
                 </button>
               ))}
 
-              {/* Fun Facts link (always at end) */}
+              {/* Fun Facts link (page route) */}
               <Link
                 to="/funfacts"
                 className="text-slate-300 hover:text-emerald-400 px-3 py-2 text-sm font-medium transition-colors duration-200 whitespace-nowrap"
@@ -101,7 +111,7 @@ const Header = () => {
                 </button>
               ))}
 
-              {/* Fun Facts (always last in mobile menu too) */}
+              {/* Fun Facts (page route) */}
               <Link
                 to="/funfacts"
                 onClick={() => setIsMenuOpen(false)}
