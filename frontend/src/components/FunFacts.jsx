@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const FunFacts = () => {
   const images = [
@@ -17,6 +17,11 @@ const FunFacts = () => {
     setCurrent((prev) => (prev - 1 + images.length) % images.length);
   };
 
+  // ✅ Scroll to top whenever this component mounts
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   return (
     <section className="min-h-screen bg-slate-100 text-slate-900 py-16 px-6">
       <h1 className="text-4xl font-bold text-center mb-6">Fun Facts Gallery 🎉</h1>
@@ -26,7 +31,7 @@ const FunFacts = () => {
       </p>
 
       {/* Carousel */}
-      <div className="relative max-w-3xl mx-auto">
+      <div className="relative max-w-6xl mx-auto px-4">
         <div className="overflow-hidden rounded-xl shadow-lg">
           <img
             src={`/funfacts/${images[current]}`}
