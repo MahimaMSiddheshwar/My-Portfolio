@@ -23,7 +23,7 @@ const FunFacts = () => {
   }, []);
 
   return (
-    <section className="min-h-screen bg-slate-100 text-slate-900 py-16 px-6">
+    <section className="min-h-screen bg-white text-slate-900 pt-28 pb-16 px-6">
       <h1 className="text-4xl font-bold text-center mb-6">Fun Facts Gallery 🎉</h1>
       <p className="text-lg text-center mb-12 max-w-3xl mx-auto text-slate-600">
         A closer look at my creative side — from poems and sketches to cooking experiments.
@@ -31,19 +31,19 @@ const FunFacts = () => {
       </p>
 
       {/* Carousel */}
-      <div className="relative max-w-6xl mx-auto px-4">
-        <div className="overflow-hidden rounded-xl shadow-lg">
+      <div className="relative max-w-4xl mx-auto px-4">
+        <div className="overflow-hidden rounded-xl shadow-xl bg-white">
           <img
             src={`/funfacts/${images[current]}`}
             alt={`Fun Fact ${current + 1}`}
-            className="w-full h-[500px] object-contain rounded-xl shadow-lg transition duration-500"
+            className="w-full h-[500px] object-contain rounded-xl transition duration-500"
           />
         </div>
 
         {/* Prev Button */}
         <button
           onClick={prevSlide}
-          className="absolute top-1/2 left-4 -translate-y-1/2 bg-emerald-600 text-white p-2 rounded-full hover:bg-emerald-700"
+          className="absolute top-1/2 left-4 -translate-y-1/2 bg-emerald-600 text-white p-2 rounded-full shadow-md hover:bg-emerald-700"
         >
           ⬅
         </button>
@@ -51,7 +51,7 @@ const FunFacts = () => {
         {/* Next Button */}
         <button
           onClick={nextSlide}
-          className="absolute top-1/2 right-4 -translate-y-1/2 bg-emerald-600 text-white p-2 rounded-full hover:bg-emerald-700"
+          className="absolute top-1/2 right-4 -translate-y-1/2 bg-emerald-600 text-white p-2 rounded-full shadow-md hover:bg-emerald-700"
         >
           ➡
         </button>

@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -22,34 +23,41 @@ const Header = () => {
     { label: "Experience", href: "#experience" },
     { label: "Projects", href: "#projects" },
     { label: "Skills", href: "#skills" },
+    { label: "Resume", href: "#resume" },
     { label: "Blog", href: "#blog" },
     { label: "Contact", href: "#contact" },
   ];
 
-  const scrollToSection = (href) => {
-    if (location.pathname !== "/") {
-      // If not on homepage, navigate first
-      navigate("/");
-      setTimeout(() => {
-        const element = document.querySelector(href);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
-      }, 300); // wait for navigation
-    } else {
+  const handleNavigation = (href) => {
+    if (location.pathname === "/") {
+      // Already on homepage → just scroll
       const element = document.querySelector(href);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
       }
+    } else {
+      // Navigate to homepage and pass target section
+      navigate("/", { state: { target: href } });
     }
     setIsMenuOpen(false);
   };
 
+  useEffect(() => {
+    if (location.pathname === "/" && location.state?.target) {
+      const element = document.querySelector(location.state.target);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 300);
+      }
+    }
+  }, [location]);
+
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled
-          ? "bg-slate-900/95 backdrop-blur-md shadow-lg"
-          : "bg-transparent"
+        ? "bg-slate-900/95 backdrop-blur-md shadow-lg"
+        : "bg-slate-900/80"
         }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -60,17 +68,17 @@ const Header = () => {
               {menuItems.map((item) => (
                 <button
                   key={item.label}
-                  onClick={() => scrollToSection(item.href)}
-                  className="text-slate-300 hover:text-emerald-400 px-3 py-2 text-sm font-medium transition-colors duration-200"
+                  onClick={() => handleNavigation(item.href)}
+                  className="text-white hover:text-emerald-400 px-3 py-2 text-sm font-medium transition-colors duration-200"
                 >
                   {item.label}
                 </button>
               ))}
 
-              {/* Fun Facts link (page route) */}
+              {/* Fun Facts link */}
               <Link
                 to="/funfacts"
-                className="text-slate-300 hover:text-emerald-400 px-3 py-2 text-sm font-medium transition-colors duration-200 whitespace-nowrap"
+                className="text-white hover:text-emerald-400 px-3 py-2 text-sm font-medium transition-colors duration-200 whitespace-nowrap"
               >
                 Fun Facts
               </Link>
@@ -90,7 +98,7 @@ const Header = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-slate-300 hover:text-emerald-400 transition-colors duration-200"
+              className="text-white hover:text-emerald-400 transition-colors duration-200"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -104,23 +112,23 @@ const Header = () => {
               {menuItems.map((item) => (
                 <button
                   key={item.label}
-                  onClick={() => scrollToSection(item.href)}
-                  className="text-slate-300 hover:text-emerald-400 block px-3 py-2 text-base font-medium w-full text-left transition-colors duration-200"
+                  onClick={() => handleNavigation(item.href)}
+                  className="text-white hover:text-emerald-400 block px-3 py-2 text-base font-medium w-full text-left transition-colors duration-200"
                 >
                   {item.label}
                 </button>
               ))}
 
-              {/* Fun Facts (page route) */}
+              {/* Fun Facts */}
               <Link
                 to="/funfacts"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-slate-300 hover:text-emerald-400 block px-3 py-2 text-base font-medium w-full text-left transition-colors duration-200 whitespace-nowrap"
+                className="text-white hover:text-emerald-400 block px-3 py-2 text-base font-medium w-full text-left transition-colors duration-200 whitespace-nowrap"
               >
                 Fun Facts
               </Link>
 
-              {/* Resume button */}
+              {/* Resume */}
               <button
                 onClick={() => window.open("/resume.pdf", "_blank")}
                 className="bg-emerald-500 hover:bg-emerald-600 text-white px-3 py-2 rounded-md text-base font-medium w-full text-left transition-colors duration-200 flex items-center gap-2 mt-2"
