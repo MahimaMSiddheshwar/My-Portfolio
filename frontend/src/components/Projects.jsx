@@ -56,8 +56,8 @@ const Projects = () => {
               key={category}
               onClick={() => setFilter(category)}
               className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${filter === category
-                  ? 'bg-emerald-600 text-white shadow-md'
-                  : 'bg-white text-slate-700 hover:bg-emerald-50 border border-slate-200'
+                ? 'bg-emerald-600 text-white shadow-md'
+                : 'bg-white text-slate-700 hover:bg-emerald-50 border border-slate-200'
                 }`}
             >
               {category}
@@ -137,14 +137,6 @@ const Projects = () => {
                     <Github size={16} />
                     View Code
                   </a>
-                  <a
-                    href={project.demo}
-                    className="flex items-center gap-2 px-4 py-2 border border-emerald-600 text-emerald-600 rounded-lg text-sm font-medium hover:bg-emerald-50 transition-colors duration-200"
-                    onClick={(e) => e.preventDefault()}
-                  >
-                    <ExternalLink size={16} />
-                    Live Demo
-                  </a>
                 </div>
               </div>
             </div>
@@ -158,7 +150,7 @@ const Projects = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://github.com"
+              href="https://github.com/MahimaMSiddheshwar"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-slate-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-slate-800 transition-colors duration-200"
