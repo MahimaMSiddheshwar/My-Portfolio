@@ -15,6 +15,7 @@ const About = () => {
   return (
     <section id="about" className="py-20 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-6">
@@ -28,6 +29,7 @@ const About = () => {
 
         {/* Main content grid */}
         <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
+
           {/* Bio section */}
           <div className="space-y-6">
             <h3 className="text-2xl font-bold text-slate-900 mb-4">My Journey</h3>
@@ -51,26 +53,28 @@ const About = () => {
               updated with the latest advances in AI and bioinformatics, contributing to
               open-source projects, and sharing my knowledge through writing and mentoring.
             </p>
-
-            {/* Stats */}
-            <div className="grid grid-cols-2 gap-6">
-              {stats.map((stat, index) => (
-                <div
-                  key={index}
-                  className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
-                >
-                  <div className="flex items-center justify-center w-12 h-12 bg-emerald-100 rounded-lg mb-4 mx-auto">
-                    <stat.icon size={24} className="text-emerald-600" />
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-slate-900 mb-2">{stat.value}</div>
-                    <div className="text-sm text-slate-600">{stat.label}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
-        </div> {/* ✅ CLOSE grid here so Education & Certifications are separate */}
+
+          {/* Stats section now parallel to Bio */}
+          <div className="grid grid-cols-2 gap-6">
+            {stats.map((stat, index) => (
+              <div
+                key={index}
+                className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+              >
+                <div className="flex items-center justify-center w-12 h-12 bg-emerald-100 rounded-lg mb-4 mx-auto">
+                  <stat.icon size={24} className="text-emerald-600" />
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-slate-900 mb-2">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm text-slate-600">{stat.label}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
 
         {/* Education */}
         <div className="mb-16">
