@@ -1,5 +1,5 @@
 // Mock data for Mahima Siddheshwar's Portfolio
-export const portfolioData = {
+const portfolioData = {
   personal: {
     fullName: "Mahima Mahabaleshwar Siddheshwar",
     displayName: "Mahima Siddheshwar",
@@ -18,7 +18,11 @@ export const portfolioData = {
       institution: "Luddy School of Informatics, Indiana University Indianapolis",
       period: "August 2023 - May 2025",
       location: "Indianapolis, IN, USA",
-      highlights: ["Focusing on genomics data analysis", "Statistical methods in bioinformatics", "Machine learning applications in biology"]
+      highlights: [
+        "Focusing on genomics data analysis",
+        "Statistical methods in bioinformatics",
+        "Machine learning applications in biology"
+      ]
     },
     {
       id: 2,
@@ -26,7 +30,11 @@ export const portfolioData = {
       institution: "Sapthagiri College of Engineering (Affiliated to VTU)",
       period: "August 2016 - August 2020",
       location: "Bangalore, India",
-      highlights: ["Foundation in molecular biology", "Laboratory techniques", "Biotechnology fundamentals"]
+      highlights: [
+        "Foundation in molecular biology",
+        "Laboratory techniques",
+        "Biotechnology fundamentals"
+      ]
     }
   ],
 
@@ -98,7 +106,7 @@ export const portfolioData = {
         "Identified key biomarkers with high predictive accuracy",
         "Created interpretability visualizations"
       ],
-      github: "https://github.com/MahimaMSiddheshwar/ML-Projects",
+      github: "https://github.com/MahimaMSiddheshwar/ML-Projects"
     },
     {
       id: 2,
@@ -114,7 +122,7 @@ export const portfolioData = {
         "Performed functional enrichment analysis",
         "Generated interactive network visualizations"
       ],
-      github: "https://github.com/MahimaMSiddheshwar/Comparative-Transcriptomic-Profiling-of-COVID-19-and-RSV",
+      github: "https://github.com/MahimaMSiddheshwar/Comparative-Transcriptomic-Profiling-of-COVID-19-and-RSV"
     },
     {
       id: 3,
@@ -130,7 +138,7 @@ export const portfolioData = {
         "Created comprehensive documentation",
         "Established best practices for reproducibility"
       ],
-      github: "https://github.com/MahimaMSiddheshwar/RNA-seq-Data-Analysis-A-Framework-for-Comparing-Computational-Pipelines-",
+      github: "https://github.com/MahimaMSiddheshwar/RNA-seq-Data-Analysis-A-Framework-for-Comparing-Computational-Pipelines-"
     },
     {
       id: 4,
@@ -145,7 +153,7 @@ export const portfolioData = {
         "Created intuitive user interfaces",
         "Implemented geographic trend analysis"
       ],
-      github: "#",
+      github: "#"
     }
   ],
 
@@ -226,7 +234,7 @@ export const portfolioData = {
     },
     {
       id: 2,
-      title: "WGCNA Best Practices for Transcriptomic Analysis",
+      title: "Best Practices for Transcriptomic Analysis",
       excerpt: "A comprehensive guide to weighted gene co-expression network analysis for identifying biological modules.",
       date: "2025-01-10",
       category: "Bioinformatics",
@@ -239,6 +247,36 @@ export const portfolioData = {
       date: "2025-01-05",
       category: "Quality Control",
       readTime: "6 min read"
+    }
+  ],
+
+  insights: [
+    {
+      id: 1,
+      title: "The Future of LLM-Powered Genomics Pipelines",
+      category: "AI & Genomics",
+      date: "2025-01-14",
+      readTime: "5 min read",
+      summary: "Exploring how large language models are revolutionizing genomics data analysis and pipeline automation.",
+      content: "Large Language Models (LLMs) have opened a new frontier in genomics research..."
+    },
+    {
+      id: 2,
+      title: "Best Practices for Transcriptomic Analysis",
+      category: "Bioinformatics",
+      date: "2025-01-09",
+      readTime: "8 min read",
+      summary: "A comprehensive guide to weighted gene co-expression network analysis for identifying biological modules.",
+      content: "Transcriptomic analysis has become one of the cornerstones of modern biology..."
+    },
+    {
+      id: 3,
+      title: "Quality Control in Biopharmaceutical Manufacturing",
+      category: "Quality Control",
+      date: "2025-01-04",
+      readTime: "6 min read",
+      summary: "Insights from the field: ensuring compliance and quality in biologics production.",
+      content: "Biopharmaceuticals, especially monoclonal antibodies, require rigorous quality control (QC)..."
     }
   ]
 };

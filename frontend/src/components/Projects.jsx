@@ -3,10 +3,12 @@ import { Github, Code, Database, Cpu, BarChart3, Filter } from 'lucide-react';
 import portfolioData from '../data/mockData';
 
 const Projects = () => {
-  const { projects } = portfolioData;
+  // ✅ Add default [] so it's never undefined
+  const { projects = [] } = portfolioData;
   const [filter, setFilter] = useState('All');
 
-  const categories = ['All', ...new Set(projects.map(project => project.category))];
+  // ✅ Protect against undefined
+  const categories = ['All', ...new Set(projects?.map(project => project.category) || [])];
 
   const filteredProjects = filter === 'All'
     ? projects
@@ -46,8 +48,8 @@ const Projects = () => {
               key={category}
               onClick={() => setFilter(category)}
               className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${filter === category
-                  ? 'bg-emerald-600 text-white shadow-md'
-                  : 'bg-white text-slate-700 hover:bg-emerald-50 border border-slate-200'
+                ? 'bg-emerald-600 text-white shadow-md'
+                : 'bg-white text-slate-700 hover:bg-emerald-50 border border-slate-200'
                 }`}
             >
               {category}
@@ -62,7 +64,7 @@ const Projects = () => {
               key={project.id}
               className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden"
             >
-              {/* Project header with gradient */}
+              {/* Project header */}
               <div className="bg-gradient-to-r from-emerald-500 to-teal-600 p-6 text-white">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center gap-3">
@@ -88,14 +90,14 @@ const Projects = () => {
                 <div className="mb-6">
                   <h4 className="font-semibold text-slate-900 mb-3">Key Highlights:</h4>
                   <ul className="space-y-2">
-                    {project.highlights.slice(0, 3).map((highlight, index) => (
+                    {project.highlights?.slice(0, 3).map((highlight, index) => (
                       <li key={index} className="flex items-start gap-2 text-sm text-slate-700">
                         <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
                         <span>{highlight}</span>
                       </li>
                     ))}
                   </ul>
-                  {project.highlights.length > 3 && (
+                  {project.highlights && project.highlights.length > 3 && (
                     <p className="text-sm text-slate-500 mt-2">
                       +{project.highlights.length - 3} more features
                     </p>
@@ -106,7 +108,7 @@ const Projects = () => {
                 <div className="mb-6">
                   <h4 className="font-semibold text-slate-900 mb-3">Technologies Used:</h4>
                   <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, index) => (
+                    {project.technologies?.map((tech, index) => (
                       <span
                         key={index}
                         className="px-2 py-1 bg-slate-100 text-slate-700 text-xs rounded-md font-medium"
@@ -134,30 +136,6 @@ const Projects = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <p className="text-lg text-slate-600 mb-6">
-            Want to see more of my work or collaborate on a project?
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="https://github.com/MahimaMSiddheshwar"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-slate-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-slate-800 transition-colors duration-200"
-            >
-              <Github size={20} />
-              View All Projects on GitHub
-            </a>
-            <button
-              onClick={() => document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' })}
-              className="border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-600 hover:text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200"
-            >
-              Let's Collaborate
-            </button>
-          </div>
         </div>
       </div>
     </section>
