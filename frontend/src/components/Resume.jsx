@@ -80,7 +80,7 @@ const Resume = () => {
                   <h4 className="text-lg font-semibold text-slate-900 mb-4">Professional Summary:</h4>
                   <div className="space-y-4">
                     <div className="bg-slate-50 rounded-lg p-4">
-                      <div className="text-2xl font-bold text-emerald-600">4+</div>
+                      <div className="text-2xl font-bold text-emerald-600">3+</div>
                       <div className="text-sm text-slate-600">Years Experience</div>
                     </div>
                     <div className="bg-slate-50 rounded-lg p-4">

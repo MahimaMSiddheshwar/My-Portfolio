@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const AchievementsCarousel = ({ count = 13 }) => {
+const AchievementsCarousel = ({ count = 6 }) => {
   const images = Array.from(
     { length: count },
     (_, i) => `/achievements/award${i + 1}.jpg`

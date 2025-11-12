@@ -43,17 +43,17 @@ const portfolioData = {
       id: 1,
       title: "Bioinformatic Analyst Intern – R&D",
       company: "Elucidata Corporation",
-      period: "July 2025 - Present",
-      location: "Remote",
+      period: "July 2025 – October 2025",
+      location: "USA",
       type: "Internship",
-      description: "Building and maintaining LLM-powered genomics pipelines while performing statistical and integrative analyses on genomics and clinical data.",
+      description:
+        "Architected LLM-powered RNA-Seq and genomics pipelines; delivered reproducible, high-accuracy analyses and stakeholder-ready outputs.",
       achievements: [
-        "Built and maintained LLM-powered genomics pipelines",
-        "Performed statistical and integrative analyses on genomics and clinical data",
-        "Collaborated with scientists and engineers to optimize workflows",
-        "Assisted in developing LLM-powered tools using prompt engineering",
-        "Supported data analysis using R and Python to identify health trends",
-        "Documented and version-controlled genomic pipelines"
+        "Architected LLM-powered RNA-Seq and genomics pipelines using Python/R, extracting features from 50+ datasets (GEO/TCGA) with 100% traceability; reduced data inconsistencies by 25% and accelerated variant annotation/interpretation by 30%.",
+        "Conducted integrative statistical analyses on multi-omics and clinical data; produced reproducible reports informing 5+ R&D decisions and shortened analysis timelines by 35% via optimized workflows and multivariate modeling.",
+        "Collaborated with 10+ scientists/engineers to evaluate and refine bioinformatics tools; achieved 20% accuracy gains using prompt engineering and scalability testing on HPC.",
+        "Supported analysis of health trends and disease patterns; contributed to 3+ study designs with HIPAA/GDPR-compliant metadata management and ethical standards.",
+        "Prepared interactive visualizations and stakeholder summaries using Power BI and Cytoscape; provided on-demand technical support and training to drive tool adoption and data quality."
       ]
     },
     {
@@ -61,32 +61,30 @@ const portfolioData = {
       title: "Research Assistant – Global Health Data Analytics",
       company: "IU BioHealth Informatics Research Center",
       period: "September 2023 – May 2025",
-      location: "Indianapolis, IN",
+      location: "USA",
       type: "Research",
-      description: "Leading data integration and visualization projects for global health analytics with focus on public health data standardization.",
+      description:
+        "Integrated public health repositories, engineered dashboards, and maintained reproducible RNA-Seq pipelines for cohort and outcomes research.",
       achievements: [
-        "Integrated 100+ records from various sources, ensuring traceability and metadata consistency",
-        "Cleaned, standardized, and cross-referenced public health data",
-        "Designed Power BI dashboards to monitor geographic trends and disease burden",
-        "Delivered health indicator visualizations",
-        "Documented and version-controlled pipelines"
+        "Integrated 100+ records from CDC/WHO repositories into standardized datasets; applied cross-referencing and statistical methods to eliminate 35% inconsistencies, enabling robust trend analysis and 20% faster cohort studies.",
+        "Developed Power BI dashboards for geographic and disease-burden monitoring from genomic data; visualized multivariate indicators that reduced manual analysis time by 40% and supported 15+ R&D presentations.",
+        "Documented and version-controlled bioinformatics pipelines (Git) to achieve 100% reproducibility across 20+ RNA-Seq analyses while upholding HIPAA/GDPR standards.",
+        "Collaborated with multidisciplinary teams; contributed to 5+ research protocols focused on health outcomes, global trends, and experiment design."
       ]
     },
     {
       id: 3,
-      title: "Executive - Quality Control (QC) Analyst",
-      company: "Biocon Biologics Limited",
-      period: "July 2021 - August 2023",
-      location: "Bangalore, India",
+      title: "Bioinformatics Specialist",
+      company: "Maxgen Technologies (Client: Hetero Pharma)",
+      period: "July 2021 – August 2023",
+      location: "India (Hybrid)",
       type: "Full-time",
-      description: "Ensured quality standards in biopharmaceutical manufacturing through comprehensive testing and compliance protocols.",
+      description:
+        "Hands-on on genomic data pipelines for biomarker discovery; delivered analytics that improved R&D decisions and process scalability.",
       achievements: [
-        "Conducted biological sample testing ensuring 100% data traceability under GMP standards",
-        "Inspected packaging materials, achieving 100% compliance",
-        "Operated and maintained HPLC, UV, Osmometer, and particulate analyzers",
-        "Investigated OOS/OOT/OOE events, initiating CAPAs",
-        "Trained new analysts and supported cross-functional teams",
-        "Led 5S and change management initiatives"
+        "Analyzed multi-omics datasets with Python/R/SQL/JMP/Power BI; applied LASSO/SVM and Cytoscape network visualizations to surface trends, supporting R&D decisions and process enhancements by 15%.",
+        "Developed and maintained custom genomic pipelines for biomarker discovery; integrated RNA-Seq features to streamline therapeutic insights and ensure reproducibility across 100+ analyses.",
+        "Troubleshot and optimized pipeline performance in collaboration with R&D and data teams; improved scalability by 20% and accelerated approvals in pharma environments."
       ]
     }
   ],
@@ -97,7 +95,8 @@ const portfolioData = {
       title: "Machine Learning Pipeline for Breast Cancer Biomarker Discovery",
       category: "Machine Learning & Genomics",
       period: "2025",
-      description: "Developed comprehensive ML pipeline integrating multiple genomics datasets to identify key biomarkers for breast cancer using advanced statistical methods.",
+      description:
+        "Developed comprehensive ML pipeline integrating multiple genomics datasets to identify key biomarkers for breast cancer using advanced statistical methods.",
       technologies: ["Python", "R", "LASSO Regression", "SVM", "Logistic Regression", "GEO Datasets"],
       highlights: [
         "Integrated 7 GEO datasets for comprehensive analysis",
@@ -113,7 +112,8 @@ const portfolioData = {
       title: "WGCNA on COVID-19 and RSV Transcriptomes",
       category: "Network Analysis & Transcriptomics",
       period: "2024",
-      description: "Constructed weighted gene co-expression networks to identify hub genes and understand molecular mechanisms in viral infections.",
+      description:
+        "Constructed weighted gene co-expression networks to identify hub genes and understand molecular mechanisms in viral infections.",
       technologies: ["R", "WGCNA", "RNA-Seq", "Network Analysis", "GO Enrichment"],
       highlights: [
         "Curated and processed RNA-Seq samples",
@@ -122,14 +122,16 @@ const portfolioData = {
         "Performed functional enrichment analysis",
         "Generated interactive network visualizations"
       ],
-      github: "https://github.com/MahimaMSiddheshwar/Comparative-Transcriptomic-Profiling-of-COVID-19-and-RSV"
+      github:
+        "https://github.com/MahimaMSiddheshwar/Comparative-Transcriptomic-Profiling-of-COVID-19-and-RSV"
     },
     {
       id: 3,
       title: "Streamlining RNA-Seq Data Analysis",
       category: "Pipeline Development",
       period: "2024",
-      description: "Developed and optimized RNA-Seq clustering pipelines to determine the most effective approach for transcriptomic data analysis.",
+      description:
+        "Developed and optimized RNA-Seq clustering pipelines to determine the most effective approach for transcriptomic data analysis.",
       technologies: ["R", "Python", "RNA-Seq", "Clustering Algorithms", "Bash", "Git"],
       highlights: [
         "Developed multiple RNA-Seq clustering approaches",
@@ -138,14 +140,16 @@ const portfolioData = {
         "Created comprehensive documentation",
         "Established best practices for reproducibility"
       ],
-      github: "https://github.com/MahimaMSiddheshwar/RNA-seq-Data-Analysis-A-Framework-for-Comparing-Computational-Pipelines-"
+      github:
+        "https://github.com/MahimaMSiddheshwar/RNA-seq-Data-Analysis-A-Framework-for-Comparing-Computational-Pipelines-"
     },
     {
       id: 4,
       title: "Weather & Air Quality Dashboard",
       category: "Data Visualization & Analytics",
       period: "2025",
-      description: "Created interactive dashboard for monitoring environmental data with real-time visualization capabilities.",
+      description:
+        "Created interactive dashboard for monitoring environmental data with real-time visualization capabilities.",
       technologies: ["Python", "Power BI", "Data Visualization", "API Integration"],
       highlights: [
         "Integrated multiple environmental data sources",
@@ -200,7 +204,7 @@ const portfolioData = {
       "ELISA",
       "Cell Culture (Mammalian & Bacterial)",
       "Protein Assays",
-      "HPLC & UV-Vis Spectroscopy",
+      "UV-Vis Spectroscopy",
       "Sample Preparation"
     ],
     "Software & Platforms": [
@@ -219,7 +223,8 @@ const portfolioData = {
       name: "Certification in Biosciences Program",
       issuer: "Biocon Academy & Keck Graduate Institute",
       period: "2021",
-      description: "Comprehensive program covering R&D, Quality Control, Quality Assurance, Production, QC Microbiology and Regulatory Affairs"
+      description:
+        "Comprehensive program covering R&D, Quality Control, Quality Assurance, Production, QC Microbiology and Regulatory Affairs"
     }
   ],
 
@@ -227,7 +232,8 @@ const portfolioData = {
     {
       id: 1,
       title: "The Future of LLM-Powered Genomics Pipelines",
-      excerpt: "Exploring how large language models are revolutionizing genomics data analysis and pipeline automation.",
+      excerpt:
+        "Exploring how large language models are revolutionizing genomics data analysis and pipeline automation.",
       date: "2025-01-15",
       category: "AI & Genomics",
       readTime: "5 min read"
@@ -235,7 +241,8 @@ const portfolioData = {
     {
       id: 2,
       title: "Best Practices for Transcriptomic Analysis",
-      excerpt: "A comprehensive guide to weighted gene co-expression network analysis for identifying biological modules.",
+      excerpt:
+        "A comprehensive guide to weighted gene co-expression network analysis for identifying biological modules.",
       date: "2025-01-10",
       category: "Bioinformatics",
       readTime: "8 min read"
@@ -243,7 +250,8 @@ const portfolioData = {
     {
       id: 3,
       title: "Quality Control in Biopharmaceutical Manufacturing",
-      excerpt: "Insights from the field: ensuring compliance and quality in biologics production.",
+      excerpt:
+        "Insights from the field: ensuring compliance and quality in biologics production.",
       date: "2025-01-05",
       category: "Quality Control",
       readTime: "6 min read"
@@ -257,8 +265,10 @@ const portfolioData = {
       category: "AI & Genomics",
       date: "2025-01-14",
       readTime: "5 min read",
-      summary: "Exploring how large language models are revolutionizing genomics data analysis and pipeline automation.",
-      content: "Large Language Models (LLMs) have opened a new frontier in genomics research..."
+      summary:
+        "Exploring how large language models are revolutionizing genomics data analysis and pipeline automation.",
+      content:
+        "Large Language Models (LLMs) have opened a new frontier in genomics research..."
     },
     {
       id: 2,
@@ -266,8 +276,10 @@ const portfolioData = {
       category: "Bioinformatics",
       date: "2025-01-09",
       readTime: "8 min read",
-      summary: "A comprehensive guide to weighted gene co-expression network analysis for identifying biological modules.",
-      content: "Transcriptomic analysis has become one of the cornerstones of modern biology..."
+      summary:
+        "A comprehensive guide to weighted gene co-expression network analysis for identifying biological modules.",
+      content:
+        "Transcriptomic analysis has become one of the cornerstones of modern biology..."
     },
     {
       id: 3,
@@ -275,8 +287,10 @@ const portfolioData = {
       category: "Quality Control",
       date: "2025-01-04",
       readTime: "6 min read",
-      summary: "Insights from the field: ensuring compliance and quality in biologics production.",
-      content: "Biopharmaceuticals, especially monoclonal antibodies, require rigorous quality control (QC)..."
+      summary:
+        "Insights from the field: ensuring compliance and quality in biologics production.",
+      content:
+        "Biopharmaceuticals, especially monoclonal antibodies, require rigorous quality control (QC)..."
     }
   ]
 };

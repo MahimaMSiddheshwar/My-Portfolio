@@ -17,7 +17,7 @@ const Achievements = () => {
         </p>
 
         {/* ✅ Corrected usage */}
-        <AchievementsCarousel count={13} />
+        <AchievementsCarousel count={6} />
       </div>
     </section>
   );

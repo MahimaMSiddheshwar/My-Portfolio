@@ -9,7 +9,7 @@ const About = () => {
     { icon: GraduationCap, label: "Years of Education", value: "5+" },
     { icon: Award, label: "Certifications", value: "1+" },
     { icon: Users, label: "Projects Completed", value: "10+" },
-    { icon: TrendingUp, label: "Years Experience", value: "4+" }
+    { icon: TrendingUp, label: "Years Experience", value: "3+" }
   ];
 
   return (
@@ -41,8 +41,7 @@ const About = () => {
               biology and data science.
             </p>
             <p className="text-lg text-slate-700 leading-relaxed">
-              With hands-on experience in quality control at Biocon Biologics and current
-              work as a Bioinformatics Analyst Intern at Elucidata Corporation, I've
+              With hands-on experience as a Bioinformatics Analyst Intern at Elucidata Corporation, I've
               developed a unique perspective that combines rigorous scientific methodology
               with cutting-edge computational techniques. I'm particularly interested in
               machine learning applications in genomics and the development of robust data
