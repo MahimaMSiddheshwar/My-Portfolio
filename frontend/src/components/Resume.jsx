@@ -22,8 +22,8 @@ const Resume = () => {
             My <span className="text-emerald-600">Resume</span>
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Download my complete resume to learn more about my professional experience,
-            skills, and achievements in bioinformatics and quality control
+            Download my complete resume to learn more about my professional experience &
+            skills in bioinformatics
           </p>
         </div>
 
@@ -41,7 +41,7 @@ const Resume = () => {
                 Mahima M Siddheshwar - CV
               </h3>
               <p className="text-center text-emerald-100">
-                Bioinformatics Analyst & QC Specialist
+                Bioinformatics Analyst
               </p>
             </div>
 
@@ -116,7 +116,7 @@ const Resume = () => {
               {/* Note */}
               <div className="mt-8 text-center">
                 <p className="text-sm text-slate-500">
-                  PDF format • Updated September 2025 • Professional references available upon request
+                  PDF format • Updated November 2025 • Professional references available upon request
                 </p>
               </div>
             </div>
