@@ -68,7 +68,7 @@ const portfolioData = {
         "Supported academic research projects involving transcriptomic workflows and data engineering for public health datasets.",
       achievements: [
         "Ran and maintained reproducible preprocessing steps (QC, trimming, alignment, feature counts) on HPC/SLURM using tools such as STAR, SAMtools, and BEDTools.",
-        "Prepared clean, analysis-ready datasets from public sources (e.g., GEO/TCGA) to support downstream analysis and interpretation.",
+        "Prepared clean, analysis-ready datasets from public sources (GEO/TCGA) to support downstream analysis and interpretation.",
         "Strengthened documentation and reproducibility habits through iterative analyses and internal reviews."
       ]
     },
@@ -250,6 +250,36 @@ const portfolioData = {
       period: "2021",
       description:
         "Program covering R&D, Quality Control, Quality Assurance, Production, QC Microbiology, and Regulatory Affairs."
+    }
+  ],
+
+  insights: [
+    {
+      id: 1,
+      title: "The Future of LLM-Powered Genomics Pipelines",
+      summary: "Exploring how large language models are influencing genomics data analysis and workflow automation.",
+      date: "2025-01-15",
+      category: "AI & Genomics",
+      readTime: "5 min read",
+      content: "Large language models are revolutionizing genomics data analysis. This article explores how AI is transforming pipeline automation, data interpretation, and quality control in bioinformatics workflows. From automated annotation to intelligent error detection, LLMs are becoming indispensable tools in modern genomics research."
+    },
+    {
+      id: 2,
+      title: "Best Practices for Transcriptomic Analysis",
+      summary: "An overview of best practices in transcriptomic and network-based analysis workflows.",
+      date: "2025-01-10",
+      category: "Bioinformatics",
+      readTime: "8 min read",
+      content: "Transcriptomic analysis requires careful consideration of multiple factors including data quality, normalization methods, and statistical testing. This comprehensive guide covers best practices from raw data processing to downstream analysis, ensuring reproducible and meaningful results in your gene expression studies."
+    },
+    {
+      id: 3,
+      title: "Quality Control in Biopharmaceutical Manufacturing",
+      summary: "Practical perspectives on ensuring quality and compliance in biologics manufacturing.",
+      date: "2025-01-05",
+      category: "Quality Control",
+      readTime: "6 min read",
+      content: "Quality control is critical in biopharmaceutical manufacturing. This article discusses practical approaches to implementing robust QC systems, from raw material testing to final product release, ensuring compliance with regulatory standards while maintaining efficiency and product safety."
     }
   ],
 
