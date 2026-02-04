@@ -21,21 +21,21 @@ const portfolioData = {
       period: "August 2023 – May 2025",
       location: "Indianapolis, IN, USA",
       highlights: [
-        "Genomics data analysis",
-        "Statistical methods in bioinformatics",
-        "Machine learning applications in biology"
+        "Genomics Data Analysis | NGS Technology",
+        "Statistical methods in Bioinformatics",
+        "Machine learning applications in Biology"
       ]
     },
     {
       id: 2,
       degree: "Bachelor of Technology in Biotechnology",
-      institution: "(Add your university name)",
+      institution: "Visvesvaraya Technological University",
       period: "2016 – 2020",
       location: "India",
       highlights: [
-        "Molecular biology foundation",
-        "Genetics and biochemistry",
-        "Wet-lab exposure and research basics"
+        "Molecular Biology",
+        "Genetics and Biochemistry",
+        "Wet-lab exposure and Research"
       ]
     }
   ],
@@ -92,6 +92,29 @@ const portfolioData = {
   projects: [
     {
       id: 1,
+      title: " Single cell RNA sequencing analysis of a melanoma (SKCM) tumor sample treated with antiPD1 immunotherapy,",
+      category: "NGS Analysis",
+      period: "2026",
+      description:
+        "Built an end-to-end ingle-cell RNA sequencing (scRNA-seq) analysis of a melanoma (SKCM) tumor sample treated with antiPD1 immunotherapy, derived from the TISCH database (dataset: SKCM_GSE134388_aPD1).",
+      technologies: [
+        "Python",
+        "Scanpy",
+        "Git Version Control",
+        "Clustering",
+        "TISCH Database",
+        "Quality Control"
+      ],
+      highlights: [
+        "Analysis Focused on characterizing the tumor immune microenvironment",
+        "Identifying major immune and stromal cell populations",
+        "Annotating clusters using canonical marker genes",
+        "Building a reproducible and interpretable scRNA seq workflow"
+      ],
+      github: "https://github.com/MahimaMSiddheshwar/scRNAseq-Immunotherapy-TumorMicroenvironment.git"
+    },
+    {
+      id: 2,
       title: "Machine Learning Pipeline for Breast Cancer Biomarker Discovery",
       category: "Machine Learning & Genomics",
       period: "2025",
@@ -114,7 +137,7 @@ const portfolioData = {
       github: "https://github.com/MahimaMSiddheshwar/ML-Projects"
     },
     {
-      id: 2,
+      id: 3,
       title: "WGCNA on COVID-19 and RSV Transcriptomes",
       category: "Network Analysis & Transcriptomics",
       period: "2024",
@@ -131,7 +154,7 @@ const portfolioData = {
         "https://github.com/MahimaMSiddheshwar/Comparative-Transcriptomic-Profiling-of-COVID-19-and-RSV"
     },
     {
-      id: 3,
+      id: 4,
       title: "Streamlining RNA-Seq Data Analysis",
       category: "Pipeline Development",
       period: "2024",
@@ -148,7 +171,7 @@ const portfolioData = {
         "https://github.com/MahimaMSiddheshwar/RNA-seq-Data-Analysis-A-Framework-for-Comparing-Computational-Pipelines-"
     },
     {
-      id: 4,
+      id: 5,
       title: "Weather & Air Quality Dashboard",
       category: "Data Visualization & Analytics",
       period: "2025",

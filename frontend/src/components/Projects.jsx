@@ -1,21 +1,23 @@
 import React, { useState } from 'react';
-import { Github, Code, Database, Cpu, BarChart3, Filter } from 'lucide-react';
+import { Github, Code, Database, Cpu, BarChart3, Filter, Dna } from 'lucide-react';
 import portfolioData from '../data/mockData';
 
 const Projects = () => {
-  // ✅ Add default [] so it's never undefined
   const { projects = [] } = portfolioData;
   const [filter, setFilter] = useState('All');
 
-  // ✅ Protect against undefined
-  const categories = ['All', ...new Set(projects?.map(project => project.category) || [])];
+  const categories = ['All', ...new Set(projects.map(p => p.category))];
 
   const filteredProjects = filter === 'All'
     ? projects
     : projects.filter(project => project.category === filter);
 
-  const getCategoryIcon = (category) => {
-    switch (category) {
+  // Icon logic
+  const getProjectIcon = (project) => {
+    // ✅ DNA icon ONLY for project with id = 1
+    if (project.id === 1) return <Dna size={55} />;
+
+    switch (project.category) {
       case 'Machine Learning & Genomics': return <Cpu size={20} />;
       case 'Network Analysis & Transcriptomics': return <Database size={20} />;
       case 'Pipeline Development': return <Code size={20} />;
@@ -27,112 +29,100 @@ const Projects = () => {
   return (
     <section id="projects" className="py-20 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-6">
             Featured <span className="text-emerald-600">Projects</span>
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Exploring the intersection of biology and computation through innovative bioinformatics solutions
+            Selected bioinformatics, genomics, and data science projects showcasing applied analysis and reproducible workflows
           </p>
         </div>
 
-        {/* Filter buttons */}
+        {/* Filter */}
         <div className="flex flex-wrap justify-center gap-3 mb-12">
           <div className="flex items-center gap-2 text-sm text-slate-600 mr-4">
-            <Filter size={16} />
-            <span>Filter by:</span>
+            <Filter size={16} /> Filter by:
           </div>
-          {categories.map((category) => (
+          {categories.map(category => (
             <button
               key={category}
               onClick={() => setFilter(category)}
-              className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${filter === category
-                ? 'bg-emerald-600 text-white shadow-md'
-                : 'bg-white text-slate-700 hover:bg-emerald-50 border border-slate-200'
-                }`}
+              className={`px-4 py-2 rounded-lg font-medium transition ${filter === category
+                ? 'bg-emerald-600 text-white'
+                : 'bg-white text-slate-700 border hover:bg-emerald-50'}`}
             >
               {category}
             </button>
           ))}
         </div>
 
-        {/* Projects grid */}
+        {/* Projects Grid */}
         <div className="grid md:grid-cols-2 gap-8">
-          {filteredProjects.map((project) => (
-            <div
-              key={project.id}
-              className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden"
-            >
-              {/* Project header */}
+          {filteredProjects.length === 0 && (
+            <div className="md:col-span-2 text-center text-slate-600">
+              No projects found for this category.
+            </div>
+          )}
+
+          {filteredProjects.map(project => (
+            <div key={project.id} className="bg-white rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1">
+
+              {/* Header */}
               <div className="bg-gradient-to-r from-emerald-500 to-teal-600 p-6 text-white">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center gap-3">
-                    {getCategoryIcon(project.category)}
+                    {getProjectIcon(project)}
                     <h3 className="text-xl font-bold">{project.title}</h3>
                   </div>
-                  <span className="text-xs bg-white/20 px-2 py-1 rounded-full">
-                    {project.period}
-                  </span>
+                  <span className="text-xs bg-white/20 px-2 py-1 rounded-full">{project.period}</span>
                 </div>
-                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-white/20">
+                <span className="inline-block text-xs bg-white/20 px-3 py-1 rounded-full">
                   {project.category}
                 </span>
               </div>
 
-              {/* Project content */}
+              {/* Content */}
               <div className="p-6">
-                <p className="text-slate-700 mb-6 leading-relaxed">
-                  {project.description}
-                </p>
+                <p className="text-slate-700 mb-6">{project.description}</p>
 
                 {/* Highlights */}
                 <div className="mb-6">
-                  <h4 className="font-semibold text-slate-900 mb-3">Key Highlights:</h4>
+                  <h4 className="font-semibold mb-3">Key Highlights</h4>
                   <ul className="space-y-2">
-                    {project.highlights?.slice(0, 3).map((highlight, index) => (
-                      <li key={index} className="flex items-start gap-2 text-sm text-slate-700">
-                        <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
-                        <span>{highlight}</span>
+                    {project.highlights?.slice(0, 3).map((h, i) => (
+                      <li key={i} className="flex gap-2 text-sm text-slate-700">
+                        <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2" />
+                        {h}
                       </li>
                     ))}
                   </ul>
-                  {project.highlights && project.highlights.length > 3 && (
-                    <p className="text-sm text-slate-500 mt-2">
-                      +{project.highlights.length - 3} more features
-                    </p>
-                  )}
                 </div>
 
                 {/* Technologies */}
                 <div className="mb-6">
-                  <h4 className="font-semibold text-slate-900 mb-3">Technologies Used:</h4>
+                  <h4 className="font-semibold mb-3">Technologies</h4>
                   <div className="flex flex-wrap gap-2">
-                    {project.technologies?.map((tech, index) => (
-                      <span
-                        key={index}
-                        className="px-2 py-1 bg-slate-100 text-slate-700 text-xs rounded-md font-medium"
-                      >
+                    {project.technologies?.map((tech, i) => (
+                      <span key={i} className="px-2 py-1 bg-slate-100 text-xs rounded">
                         {tech}
                       </span>
                     ))}
                   </div>
                 </div>
 
-                {/* Action buttons */}
-                <div className="flex gap-3">
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-lg text-sm font-medium hover:bg-slate-800 transition-colors duration-200"
-                    >
-                      <Github size={16} />
-                      View Code
-                    </a>
-                  )}
-                </div>
+                {/* Actions */}
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-lg text-sm hover:bg-slate-800"
+                  >
+                    <Github size={16} /> View Code
+                  </a>
+                )}
               </div>
             </div>
           ))}
