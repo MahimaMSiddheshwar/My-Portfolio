@@ -8,20 +8,53 @@ const portfolioData = {
     email: "mahimamahabaleshwar@gmail.com",
     phone: "317-506-5008",
     linkedin: "https://www.linkedin.com/in/mahima-siddheshwar-98a585196",
-    bio: "Passionate Bioinformatics Analyst with expertise in genomics data analysis, machine learning, and quality control systems. Pursued M.S. in Bioinformatics at Indiana University Indianapolis while gaining hands-on experience in LLM-powered genomics pipelines at Elucidata Corporation."
+    bio:
+      "Passionate Bioinformatics Analyst with experience in genomics data analysis, machine learning, and quality-focused workflows. Completed an M.S. in Bioinformatics at Indiana University Indianapolis and worked on LLM-assisted genomics workflows during an internship at Elucidata Corporation."
   },
 
+  // Education ONLY (keep work roles in the experience section below)
   education: [
     {
       id: 1,
       degree: "Master of Science in Bioinformatics",
       institution: "Luddy School of Informatics, Indiana University Indianapolis",
-      period: "August 2023 - May 2025",
+      period: "August 2023 – May 2025",
       location: "Indianapolis, IN, USA",
       highlights: [
-        "Focusing on genomics data analysis",
+        "Genomics data analysis",
         "Statistical methods in bioinformatics",
         "Machine learning applications in biology"
+      ]
+    },
+    {
+      id: 2,
+      degree: "Bachelor of Technology in Biotechnology",
+      institution: "(Add your university name)",
+      period: "2016 – 2020",
+      location: "India",
+      highlights: [
+        "Molecular biology foundation",
+        "Genetics and biochemistry",
+        "Wet-lab exposure and research basics"
+      ]
+    }
+  ],
+
+  // Work / Research experience
+  experience: [
+    {
+      id: 1,
+      title: "Bioinformatics Analyst Intern – R&D",
+      company: "Elucidata Corporation",
+      period: "July 2025 – October 2025",
+      location: "USA",
+      type: "Internship",
+      description:
+        "Supported evaluation and refinement of AI-assisted genomics workflows with focus on biological coherence, reproducibility, and QC.",
+      achievements: [
+        "Tested AI-assisted RNA-seq and scRNA-seq workflows across many scenarios and datasets.",
+        "Validated outputs against biological expectations and standard genomics practices.",
+        "Documented failure modes and collaborated with engineering teams to improve workflow logic."
       ]
     },
     {
@@ -29,18 +62,16 @@ const portfolioData = {
       title: "Research Assistant – Global Health Data Analytics",
       company: "IU BioHealth Informatics Research Center",
       period: "September 2023 – May 2025",
-      location: "USA",
+      location: "Indianapolis, IN, USA",
       type: "Research",
       description:
-        "As a **Research Assistant** at the **IU BioHealth Informatics Research Center**, I worked in an **academic research setting** supporting **transcriptomic analysis**, including **bulk RNA-seq and single-cell RNA-seq**.",
+        "Supported academic research projects involving transcriptomic workflows and data engineering for public health datasets.",
       achievements: [
-        "Most of my work involved **running existing pipelines** and maintaining **reproducible code** for **quality control, trimming, alignment, and feature counting** on **HPC systems using SLURM**, with tools such as **STAR, SAMtools, and BEDTools**.",
-        "I was exposed to a broader range of **bioinformatics analyses**, tools, and **introductory machine learning concepts** through lab activities including **reading research papers**, **reproducing published analyses**, and **presenting results within the team**, which helped me become comfortable working in an academic research environment.",
-        "I also helped prepare **clean, analysis-ready datasets** from public repositories such as **GEO** and **TCGA**, supporting downstream analysis and interpretation.",
-        "Overall, this role strengthened my understanding of **data quality**, **reproducibility**, and **collaborative research practices** in an academic setting."
+        "Ran and maintained reproducible preprocessing steps (QC, trimming, alignment, feature counts) on HPC/SLURM using tools such as STAR, SAMtools, and BEDTools.",
+        "Prepared clean, analysis-ready datasets from public sources (e.g., GEO/TCGA) to support downstream analysis and interpretation.",
+        "Strengthened documentation and reproducibility habits through iterative analyses and internal reviews."
       ]
     },
-
     {
       id: 3,
       title: "Bioinformatics Specialist",
@@ -49,24 +80,11 @@ const portfolioData = {
       location: "India (Hybrid)",
       type: "Full-time",
       description:
-        "Earlier in my career, I worked at **Maxgen Technologies** in India in a **bioinformatics support role** within a **pharma R&D environment**. My role was **rotational**, beginning in the **wet lab** before transitioning into the **dry lab**.",
+        "Rotational role across wet-lab and dry-lab support in a pharma R&D environment; transitioned to bioinformatics support focused on expression analyses.",
       achievements: [
-        "In the dry lab, I supported **gene expression analysis**, **single-cell RNA-seq clustering and annotation**, and **marker gene interpretation** to assist ongoing research and preclinical studies, largely using **pre-built bioinformatics tools**.",
-        "Alongside technical work, I learned to operate within **regulated workflows** by following **SOPs** and **GxP / GLP practices**, gaining an understanding of **documentation standards**, **reproducibility**, and **audit readiness**.",
-        "Overall, this role provided early exposure to how **bioinformatics analyses are applied in real drug-development settings**, even while working in a **supporting capacity**."
-      ]
-    },
-      title: "Bioinformatics Specialist",
-      company: "Maxgen Technologies (Client: Hetero Pharma)",
-      period: "July 2021 – August 2023",
-      location: "India (Hybrid)",
-      type: "Full-time",
-      description:
-        "Worked on genomic and transcriptomic data pipelines for biomarker discovery and research support within a pharmaceutical R&D environment.",
-      achievements: [
-        "Analyzed multi-omics datasets using Python and R; applied statistical and machine learning approaches such as LASSO and SVM to support R&D decision-making.",
-        "Developed and maintained custom genomic analysis pipelines with a focus on reproducibility, documentation, and scalability across multiple projects.",
-        "Collaborated with R&D and data teams to troubleshoot pipeline issues and optimize workflows, improving turnaround time and analysis consistency."
+        "Supported gene expression analysis and single-cell clustering/annotation using established tools and team workflows.",
+        "Interpreted marker genes to support ongoing research and preclinical studies.",
+        "Worked within SOP-driven processes and learned GxP/GLP-aligned documentation and audit readiness basics."
       ]
     }
   ],
@@ -78,14 +96,20 @@ const portfolioData = {
       category: "Machine Learning & Genomics",
       period: "2025",
       description:
-        "Developed an end-to-end machine learning pipeline integrating multiple public genomics datasets to identify candidate biomarkers for breast cancer.",
-      technologies: ["Python", "R", "LASSO Regression", "SVM", "Logistic Regression", "GEO Datasets"],
+        "Built an end-to-end ML workflow using public gene-expression datasets to identify candidate biomarkers for breast cancer.",
+      technologies: [
+        "Python",
+        "R",
+        "LASSO",
+        "SVM",
+        "Logistic Regression",
+        "GEO"
+      ],
       highlights: [
-        "Integrated and harmonized seven GEO datasets",
-        "Performed feature selection using LASSO regression",
-        "Trained and evaluated SVM and logistic regression models",
-        "Identified candidate biomarkers with strong predictive performance",
-        "Generated interpretability and performance visualizations"
+        "Integrated multiple GEO datasets",
+        "Performed feature selection using LASSO",
+        "Trained and evaluated classification models",
+        "Generated performance and interpretability plots"
       ],
       github: "https://github.com/MahimaMSiddheshwar/ML-Projects"
     },
@@ -95,17 +119,16 @@ const portfolioData = {
       category: "Network Analysis & Transcriptomics",
       period: "2024",
       description:
-        "Applied weighted gene co-expression network analysis to identify key gene modules and hub genes associated with viral infection responses.",
-      technologies: ["R", "WGCNA", "RNA-Seq", "Network Analysis", "GO Enrichment"],
+        "Applied WGCNA to identify gene co-expression modules and hub genes associated with viral infection responses.",
+      technologies: ["R", "WGCNA", "RNA-seq", "GO Enrichment", "Cytoscape"],
       highlights: [
-        "Processed and curated RNA-Seq datasets",
         "Constructed co-expression networks",
-        "Identified biologically relevant modules and hub genes",
+        "Identified biologically relevant modules",
         "Performed functional enrichment analysis",
-        "Visualized networks using Cytoscape"
+        "Visualized module relationships"
       ],
       github:
-        "https://github.com/MahimaMSiddhwar/Comparative-Transcriptomic-Profiling-of-COVID-19-and-RSV"
+        "https://github.com/MahimaMSiddheshwar/Comparative-Transcriptomic-Profiling-of-COVID-19-and-RSV"
     },
     {
       id: 3,
@@ -113,17 +136,16 @@ const portfolioData = {
       category: "Pipeline Development",
       period: "2024",
       description:
-        "Developed and compared RNA-Seq clustering and preprocessing pipelines to establish reproducible and efficient analysis workflows.",
-      technologies: ["R", "Python", "RNA-Seq", "Clustering Algorithms", "Bash", "Git"],
+        "Compared clustering and preprocessing strategies to support reproducible RNA-seq analysis workflows.",
+      technologies: ["R", "Python", "RNA-seq", "Bash", "Git"],
       highlights: [
         "Implemented multiple clustering strategies",
-        "Compared performance and reproducibility",
+        "Compared results for consistency",
         "Automated workflow steps",
-        "Created detailed documentation",
-        "Established analysis best practices"
+        "Created clear documentation"
       ],
       github:
-        "https://github.com/MahimaMSiddhwar/RNA-seq-Data-Analysis-A-Framework-for-Comparing-Computational-Pipelines-"
+        "https://github.com/MahimaMSiddheshwar/RNA-seq-Data-Analysis-A-Framework-for-Comparing-Computational-Pipelines-"
     },
     {
       id: 4,
@@ -131,15 +153,14 @@ const portfolioData = {
       category: "Data Visualization & Analytics",
       period: "2025",
       description:
-        "Built an interactive dashboard for exploring environmental and air quality data using modern visualization tools.",
+        "Built an interactive dashboard for exploring environmental and air quality data.",
       technologies: ["Python", "Power BI", "Data Visualization", "API Integration"],
       highlights: [
-        "Aggregated data from multiple public sources",
-        "Cleaned and standardized raw datasets",
-        "Performed data transformation using Python",
-        "Delivered dashboards highlighting trends and insights"
+        "Aggregated data from public sources",
+        "Standardized raw datasets",
+        "Delivered dashboards showing trends and insights"
       ],
-      github: "https://github.com/MahimaMSiddhwar/Health_Data_Analytics_Hub.git"
+      github: "https://github.com/MahimaMSiddheshwar/Health_Data_Analytics_Hub"
     }
   ],
 
@@ -167,7 +188,6 @@ const portfolioData = {
       "Power BI",
       "ggplot2",
       "Matplotlib",
-      "Seaborn",
       "Plotly",
       "Excel"
     ],
