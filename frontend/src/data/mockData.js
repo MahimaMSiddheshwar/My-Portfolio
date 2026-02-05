@@ -31,7 +31,7 @@ const portfolioData = {
       degree: "Bachelor of Technology in Biotechnology",
       institution: "Visvesvaraya Technological University",
       period: "2016 – 2020",
-      location: "India",
+      location: "Bangalore,India",
       highlights: [
         "Molecular Biology",
         "Genetics and Biochemistry",
@@ -246,7 +246,7 @@ const portfolioData = {
     {
       id: 1,
       name: "Certification in Biosciences Program",
-      issuer: "Biocon Academy & Keck Graduate Institute",
+      issuer: "Biocon Academy & Keck Graduate Institute, California",
       period: "2021",
       description:
         "Program covering R&D, Quality Control, Quality Assurance, Production, QC Microbiology, and Regulatory Affairs."
@@ -258,7 +258,7 @@ const portfolioData = {
       id: 1,
       title: "The Future of LLM-Powered Genomics Pipelines",
       summary: "Exploring how large language models are influencing genomics data analysis and workflow automation.",
-      date: "2025-01-15",
+      date: "2026-02-04",
       category: "AI & Genomics",
       readTime: "5 min read",
       content: "Large language models are revolutionizing genomics data analysis. This article explores how AI is transforming pipeline automation, data interpretation, and quality control in bioinformatics workflows. From automated annotation to intelligent error detection, LLMs are becoming indispensable tools in modern genomics research."
@@ -267,7 +267,7 @@ const portfolioData = {
       id: 2,
       title: "Best Practices for Transcriptomic Analysis",
       summary: "An overview of best practices in transcriptomic and network-based analysis workflows.",
-      date: "2025-01-10",
+      date: "2026-02-04",
       category: "Bioinformatics",
       readTime: "8 min read",
       content: "Transcriptomic analysis requires careful consideration of multiple factors including data quality, normalization methods, and statistical testing. This comprehensive guide covers best practices from raw data processing to downstream analysis, ensuring reproducible and meaningful results in your gene expression studies."
@@ -283,35 +283,196 @@ const portfolioData = {
     }
   ],
 
-  blogPosts: [
-    {
-      id: 1,
-      title: "The Future of LLM-Powered Genomics Pipelines",
-      excerpt:
-        "Exploring how large language models are influencing genomics data analysis and workflow automation.",
-      date: "2025-01-15",
-      category: "AI & Genomics",
-      readTime: "5 min read"
-    },
-    {
-      id: 2,
-      title: "Best Practices for Transcriptomic Analysis",
-      excerpt:
-        "An overview of best practices in transcriptomic and network-based analysis workflows.",
-      date: "2025-01-10",
-      category: "Bioinformatics",
-      readTime: "8 min read"
-    },
-    {
-      id: 3,
-      title: "Quality Control in Biopharmaceutical Manufacturing",
-      excerpt:
-        "Practical perspectives on ensuring quality and compliance in biologics manufacturing.",
-      date: "2025-01-05",
-      category: "Quality Control",
-      readTime: "6 min read"
-    }
-  ]
+   blogPosts: [
+  {
+    id: 1,
+    title: "The Future of LLM-Powered Genomics Pipelines",
+    excerpt:
+      "Exploring how large language models are influencing genomics data analysis and workflow automation.",
+    date: "2026-02-04",
+    category: "AI & Genomics",
+    readTime: "5 min read",
+    content:
+      "🔬 OVERVIEW\n" +
+      "Large language models (LLMs) are increasingly being used as productivity tools in genomics and bioinformatics. They are not replacing core algorithms (alignment, quantification, differential analysis), but they can reduce time spent on repetitive tasks like organizing inputs, generating analysis templates, interpreting QC reports, and turning results into readable summaries.\n\n" +
+
+      "🧠 WHAT AN LLM IS GOOD AT (IN PRACTICE)\n" +
+      "LLMs are strong at pattern-based reasoning and language tasks. In genomics workflows, that often translates into:\n" +
+      "• Converting a research goal into a structured analysis checklist\n" +
+      "• Drafting pipeline skeletons (folder structure, config files, command templates)\n" +
+      "• Explaining what common metrics mean (mapping rate, duplication, mitochondrial %, etc.)\n" +
+      "• Summarizing outputs into short, human-readable notes for lab updates\n\n" +
+
+      "🧬 WHERE LLMs CAN HELP ACROSS A TYPICAL PIPELINE\n" +
+      "1) STUDY SETUP & METADATA\n" +
+      "• Helping clean sample metadata tables (consistent naming, group labels)\n" +
+      "• Suggesting a clear comparison structure (treated vs control, paired design)\n" +
+      "• Flagging missing fields that will matter later (batch, replicate, timepoint)\n\n" +
+
+      "2) QC INTERPRETATION\n" +
+      "LLMs can help you interpret QC patterns, for example:\n" +
+      "• Low mapping + high rRNA reads → possible contamination or reference mismatch\n" +
+      "• High duplication → low complexity library or over-amplification\n" +
+      "• High mitochondrial % in scRNA-seq → stressed/dying cells or dissociation artifacts\n" +
+      "This is useful because QC reports contain many metrics, and beginners often don’t know what matters most.\n\n" +
+
+      "3) ASSISTING DOWNSTREAM NARRATIVE\n" +
+      "After differential expression or clustering, an LLM can help:\n" +
+      "• Summarize marker genes into likely cell type labels (with references to known markers)\n" +
+      "• Convert enrichment outputs into biologically meaningful statements\n" +
+      "• Draft “Results” bullets for a slide deck or portfolio page\n\n" +
+
+      "⚙️ WHAT LLMs SHOULD NOT DO (WITHOUT CAREFUL REVIEW)\n" +
+      "• Final scientific decisions (e.g., declaring a pathway is “important” without context)\n" +
+      "• Interpreting results without checking experimental design and confounders\n" +
+      "• Producing ‘confident’ statements without evidence or validation\n" +
+      "• Replacing domain checks like: known markers, controls, replicate consistency\n\n" +
+
+      "✅ HOW TO USE LLMs SAFELY (A SIMPLE WORKFLOW)\n" +
+      "Step 1: Use LLMs to draft and organize (templates, checklists, documentation)\n" +
+      "Step 2: Run real tools for the analysis (STAR/Salmon/Scanpy/Seurat, etc.)\n" +
+      "Step 3: Validate results using biology + QC + known references\n" +
+      "Step 4: Use the LLM again to help write a clean summary of what you verified\n\n" +
+
+      "📌 TAKEAWAY\n" +
+      "LLMs are best used as a co-pilot for structuring workflows and communicating results. They can speed up routine work, but biological correctness still depends on careful QC, validated reasoning, and human review."
+  },
+
+  {
+    id: 2,
+    title: "Best Practices for Transcriptomic Analysis",
+    excerpt:
+      "An overview of best practices in transcriptomic and network-based analysis workflows.",
+    date: "2026-01-15",
+    category: "Bioinformatics",
+    readTime: "8 min read",
+    content:
+      "🧪 OVERVIEW\n" +
+      "Transcriptomic analysis can look “simple” (run alignment → run DE → plot volcano), but most errors happen because of weak experimental design, poor QC, or incorrect assumptions during preprocessing. This guide summarizes practical best practices that keep results biologically meaningful and reproducible.\n\n" +
+
+      "🧭 1) START WITH A CLEAR STUDY DESIGN\n" +
+      "Before touching the FASTQs or expression matrix, define:\n" +
+      "• What is the primary question? (e.g., treated vs untreated, tumor vs normal)\n" +
+      "• What is the comparison structure? (paired? time-series? multiple groups?)\n" +
+      "• Which covariates matter? (batch, sex, age, tissue site, sequencing run)\n" +
+      "• What is your success definition? (biological interpretation, predictive model, biomarkers)\n\n" +
+
+      "🔍 2) QC IS NOT OPTIONAL\n" +
+      "QC is where you prevent wasted downstream work. In bulk RNA-seq:\n" +
+      "• Check read quality and adapter contamination\n" +
+      "• Confirm mapping rates and rRNA contamination\n" +
+      "• Review duplication/library complexity\n" +
+      "• Confirm gene body coverage (3’ bias can indicate degradation)\n\n" +
+      "In single-cell RNA-seq:\n" +
+      "• Filter cells with very low genes/UMIs (empty droplets)\n" +
+      "• Filter extreme mitochondrial % (stressed/dying cells)\n" +
+      "• Watch doublets (high genes/UMIs) where two cells appear as one\n\n" +
+
+      "⚙️ 3) NORMALIZATION AND PREPROCESSING (DO IT RIGHT)\n" +
+      "Bulk RNA-seq:\n" +
+      "• Use accepted methods (DESeq2 size factors, edgeR TMM, etc.)\n" +
+      "• Avoid comparing raw counts directly\n" +
+      "• Transform carefully for visualization (VST/rlog/log2 CPM)\n\n" +
+      "Single-cell:\n" +
+      "• Normalize consistently (log-normalization or SCTransform-like approaches)\n" +
+      "• Choose HVGs appropriately\n" +
+      "• Scale only where needed (not always mandatory for every method)\n\n" +
+      "If integrating datasets:\n" +
+      "• Confirm batch structure\n" +
+      "• Use appropriate integration methods (Harmony, scVI, Seurat integration)\n" +
+      "• Always validate that biology is preserved (markers still make sense)\n\n" +
+
+      "📊 4) STATISTICS: MATCH THE MODEL TO THE DESIGN\n" +
+      "Common mistakes:\n" +
+      "• Ignoring batch effects in a multi-run dataset\n" +
+      "• Treating paired samples as unpaired\n" +
+      "• Using the wrong unit (cells as replicates instead of donors in scRNA)\n\n" +
+      "Best practice:\n" +
+      "• Use a design matrix that reflects reality\n" +
+      "• Validate with diagnostic plots (PCA/UMAP by batch and condition)\n" +
+      "• Report effect size + adjusted p-values (not p-values alone)\n\n" +
+
+      "🧬 5) INTERPRETATION: DON’T STOP AT A GENE LIST\n" +
+      "After DE or marker discovery:\n" +
+      "• Use gene set/pathway analysis (GSEA, Reactome, GO)\n" +
+      "• Interpret directionality (up vs down regulated pathways)\n" +
+      "• Confirm whether results match expected biology or literature\n\n" +
+      "For network analysis:\n" +
+      "• WGCNA can summarize patterns into modules\n" +
+      "• Modules should be validated with traits + enrichment\n" +
+      "• Hub genes should be treated as candidates, not final conclusions\n\n" +
+
+      "📁 6) REPRODUCIBILITY (WHAT RECRUITERS AND LABS CARE ABOUT)\n" +
+      "Your analysis is only valuable if it can be reproduced.\n" +
+      "Practical habits:\n" +
+      "• Save parameters + software versions\n" +
+      "• Keep intermediate outputs (QC reports, processed matrices)\n" +
+      "• Use consistent folder structure\n" +
+      "• Write short READMEs explaining inputs → steps → outputs\n\n" +
+
+      "✅ TAKEAWAY\n" +
+      "Good transcriptomic analysis is less about fancy plots and more about correct design, solid QC, appropriate normalization/statistics, and careful biological interpretation—backed by reproducible documentation."
+  },
+
+  {
+    id: 3,
+    title: "Quality Control in Biopharmaceutical Manufacturing",
+    excerpt:
+      "Practical perspectives on ensuring quality and compliance in biologics manufacturing.",
+    date: "2026-01-05",
+    category: "Quality Control",
+    readTime: "6 min read",
+    content:
+      "🏭 OVERVIEW\n" +
+      "Quality Control (QC) in biopharmaceutical manufacturing is about ensuring consistency, safety, and compliance. QC teams verify that raw materials, in-process samples, and final products meet predefined acceptance criteria. The goal is not only to detect failures, but to prevent them through disciplined systems and documentation.\n\n" +
+
+      "✅ 1) WHAT QC REALLY ENSURES\n" +
+      "QC ensures:\n" +
+      "• Identity: Is this the correct material/product?\n" +
+      "• Purity: Are impurities within limits?\n" +
+      "• Potency: Does it meet functional strength requirements?\n" +
+      "• Safety: Is it free from harmful contamination (where applicable)?\n" +
+      "• Consistency: Are results stable across batches and time?\n\n" +
+
+      "🧾 2) STRONG QC IS A SYSTEM (NOT JUST TESTING)\n" +
+      "Testing is one part. Strong QC also includes:\n" +
+      "• SOP-driven execution (same method, same steps, every time)\n" +
+      "• Good documentation practices (GDP)\n" +
+      "• Controlled templates, versioning, and traceability\n" +
+      "• Clear roles for review, approval, and release\n\n" +
+
+      "📑 3) DOCUMENTATION: ALCOA+ MINDSET\n" +
+      "Even correct results can become unusable if documentation is weak.\n" +
+      "ALCOA+ emphasizes that records should be:\n" +
+      "• Attributable (who did it)\n" +
+      "• Legible (readable)\n" +
+      "• Contemporaneous (recorded at the time)\n" +
+      "• Original (or true copy)\n" +
+      "• Accurate (no missing context)\n" +
+      "Plus: Complete, Consistent, Enduring, Available\n\n" +
+
+      "⚠️ 4) DEVIATIONS AND INVESTIGATIONS\n" +
+      "In real manufacturing, deviations happen (instrument issues, out-of-range results, procedural errors).\n" +
+      "Good QC response involves:\n" +
+      "• Documenting the deviation immediately\n" +
+      "• Performing an investigation (root cause analysis)\n" +
+      "• Assessing impact (does it affect product quality?)\n" +
+      "• Implementing CAPA (fix and prevent recurrence)\n\n" +
+
+      "🛠️ 5) CAPA: HOW QUALITY IMPROVES OVER TIME\n" +
+      "CAPA = Corrective and Preventive Actions.\n" +
+      "Corrective: Fix what happened now\n" +
+      "Preventive: Prevent the same issue later\n" +
+      "Examples:\n" +
+      "• Updating SOP steps\n" +
+      "• Retraining analysts\n" +
+      "• Adding system checks to catch errors earlier\n" +
+      "• Improving equipment maintenance schedules\n\n" +
+
+      "📌 TAKEAWAY\n" +
+      "Quality control is not only about running tests. It is a disciplined system of repeatability, documentation, investigation, and prevention that protects product quality and ultimately patient safety."
+  }
+]
 };
 
 export default portfolioData;
