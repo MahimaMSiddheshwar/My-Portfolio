@@ -115,6 +115,37 @@ const portfolioData = {
     },
     {
       id: 2,
+      title: "Spatial Transcriptomics of Breast Cancer Tissue",
+      category: "Omics Analysis & Data Visualization",
+      period: "2026",
+      description:
+        "Mapping the tumor microenvironment at spatial resolution using 10x Genomics Visium resolving how cancer, stromal, and immune cells communicate across tissue space.",
+      technologies: ["Python", "Scanpy", "Squidpy", "Moran's I", "CellChatDB", "10x Genomics Visium", "Leiden Clustering"],
+      highlights: [
+        "ER+ Luminal A Subtype Confirmed Spatially",
+        "S9 Spatially Coherent TME Domains at Resolution 0.5",
+        "2,486 Spatially Variable Genes — 11.6% of Transcriptome"
+      ],
+      github: "https://spatial-biology.vercel.app/"
+    },
+    {
+      id: 3,
+      title: "Bioinformatic Insights Website",
+      category: "Complete Overview from Life Science Research",
+      period: "2026",
+      description:
+        "Mapping the tumor microenvironment at spatial resolution using 10x Genomics Visium resolving how cancer, stromal, and immune cells communicate across tissue space.",
+      technologies: ["Python", "Scanpy", "Squidpy", "Moran's I", "CellChatDB", "10x Genomics Visium", "Leiden Clustering"],
+      highlights: [
+        "Aggregated data from public sources",
+        "Curated Bioscience Personal Website",
+        "Delivered learnings showing trends and insights from the field",
+        "Designed for recruiters and hiring managers to quickly understand my skills and experience"
+      ],
+      github: "https://bioinformatics-insights.vercel.app/"
+    },
+    {
+      id: 4,
       title: "Machine Learning Pipeline for Breast Cancer Biomarker Discovery",
       category: "Machine Learning & Genomics",
       period: "2025",
@@ -137,7 +168,7 @@ const portfolioData = {
       github: "https://github.com/MahimaMSiddheshwar/ML-Projects"
     },
     {
-      id: 3,
+      id: 5,
       title: "WGCNA on COVID-19 and RSV Transcriptomes",
       category: "Network Analysis & Transcriptomics",
       period: "2024",
@@ -150,11 +181,10 @@ const portfolioData = {
         "Performed functional enrichment analysis",
         "Visualized module relationships"
       ],
-      github:
-        "https://github.com/MahimaMSiddheshwar/Comparative-Transcriptomic-Profiling-of-COVID-19-and-RSV"
+      github: "https://github.com/MahimaMSiddheshwar/Comparative-Transcriptomic-Profiling-of-COVID-19-and-RSV",
     },
     {
-      id: 4,
+      id: 6,
       title: "Streamlining RNA-Seq Data Analysis",
       category: "Pipeline Development",
       period: "2024",
@@ -167,26 +197,10 @@ const portfolioData = {
         "Automated workflow steps",
         "Created clear documentation"
       ],
-      github:
-        "https://github.com/MahimaMSiddheshwar/RNA-seq-Data-Analysis-A-Framework-for-Comparing-Computational-Pipelines-"
-    },
-    {
-      id: 5,
-      title: "Weather & Air Quality Dashboard",
-      category: "Data Visualization & Analytics",
-      period: "2025",
-      description:
-        "Built an interactive dashboard for exploring environmental and air quality data.",
-      technologies: ["Python", "Power BI", "Data Visualization", "API Integration"],
-      highlights: [
-        "Aggregated data from public sources",
-        "Standardized raw datasets",
-        "Delivered dashboards showing trends and insights"
-      ],
-      github: "https://github.com/MahimaMSiddheshwar/Health_Data_Analytics_Hub"
+      github: "https://github.com/MahimaMSiddheshwar/RNA-seq-Data-Analysis-A-Framework-for-Comparing-Computational-Pipelines-",
     }
   ],
-
+ 
   skills: {
     "Bioinformatics & Omics Analysis": [
       "RNA-seq Analysis",

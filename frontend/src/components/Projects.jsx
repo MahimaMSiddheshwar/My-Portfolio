@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Github, Code, Database, Cpu, BarChart3, Filter, Dna } from 'lucide-react';
+import { Github, Code, Database, Cpu, BarChart3, Filter, Dna, CpuIcon, PipetteIcon, LibraryBigIcon, ComputerIcon, DatabaseIcon, BarChartHorizontalIcon, PieChartIcon } from 'lucide-react';
 import portfolioData from '../data/mockData';
 
 const Projects = () => {
@@ -18,10 +18,13 @@ const Projects = () => {
     if (project.id === 1) return <Dna size={55} />;
 
     switch (project.category) {
+      case 'NGS Analysis': return <Dna size={55} />;
       case 'Machine Learning & Genomics': return <Cpu size={20} />;
       case 'Network Analysis & Transcriptomics': return <Database size={20} />;
-      case 'Pipeline Development': return <Code size={20} />;
+      case 'Pipeline Development': return <PieChartIcon size={20} />;
       case 'Data Visualization & Analytics': return <BarChart3 size={20} />;
+      case 'Omics Analysis & Data Visualization': return <BarChart3 size={20} />;
+      case 'Complete Overview from Life Science Research': return <ComputerIcon size={20} />;
       default: return <Code size={20} />;
     }
   };
