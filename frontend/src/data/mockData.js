@@ -92,6 +92,29 @@ const portfolioData = {
   projects: [
     {
       id: 1,
+      title: "Mapping the Human Brain Functional Connectome",
+      category: "Human Brain Connectome",
+      period: "2026",
+      description:
+        "A network-science analysis of resting-state functional connectivity across 20 healthy adults using the ADHD-200 dataset and Destrieux cortical parcellation",
+      technologies: [
+        "Python",
+        "nilearn",
+        "NetworkX",
+        "Scipy",
+        "python-louvain",
+        "Jupyter Notebook"
+      ],
+      highlights: [
+        "Built functional connectome from real fMRI data",
+        "Identified R77 as dominant global brain hub",
+        "Detected 21 communities with modularity Q=0.693",
+        "Confirmed bilateral interhemispheric synchronization across hemispheres"
+      ],
+      github: "https://human-brain-connectome.vercel.app/"
+    },
+    {
+      id: 2,
       title: " Single cell RNA sequencing analysis of a melanoma (SKCM) tumor sample treated with antiPD1 immunotherapy,",
       category: "NGS Analysis",
       period: "2026",
@@ -114,7 +137,7 @@ const portfolioData = {
       github: "https://github.com/MahimaMSiddheshwar/scRNAseq-Immunotherapy-TumorMicroenvironment.git"
     },
     {
-      id: 2,
+      id: 3,
       title: "Spatial Transcriptomics of Breast Cancer Tissue",
       category: "Omics Analysis & Data Visualization",
       period: "2026",
@@ -129,7 +152,7 @@ const portfolioData = {
       github: "https://spatial-biology.vercel.app/"
     },
     {
-      id: 3,
+      id: 4,
       title: "Bioinformatic Insights Website",
       category: "Complete Overview from Life Science Research",
       period: "2026",
@@ -145,7 +168,7 @@ const portfolioData = {
       github: "https://bioinformatics-insights.vercel.app/"
     },
     {
-      id: 4,
+      id: 5,
       title: "Machine Learning Pipeline for Breast Cancer Biomarker Discovery",
       category: "Machine Learning & Genomics",
       period: "2025",
@@ -168,7 +191,7 @@ const portfolioData = {
       github: "https://github.com/MahimaMSiddheshwar/ML-Projects"
     },
     {
-      id: 5,
+      id: 6,
       title: "WGCNA on COVID-19 and RSV Transcriptomes",
       category: "Network Analysis & Transcriptomics",
       period: "2024",
@@ -184,7 +207,7 @@ const portfolioData = {
       github: "https://github.com/MahimaMSiddheshwar/Comparative-Transcriptomic-Profiling-of-COVID-19-and-RSV",
     },
     {
-      id: 6,
+      id: 7,
       title: "Streamlining RNA-Seq Data Analysis",
       category: "Pipeline Development",
       period: "2024",
