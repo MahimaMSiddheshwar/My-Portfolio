@@ -14,19 +14,24 @@ const Projects = () => {
 
   // Icon logic
   const getProjectIcon = (project) => {
-    // ✅ DNA icon ONLY for project with id = 1
-    if (project.id === 1) return <Dna size={55} />;
-
     switch (project.category) {
-      case 'NGS Analysis': return <Dna size={55} />;
-      case 'Machine Learning & Genomics': return <Cpu size={20} />;
-      case 'Human Brain Connectome': return <BrainIcon size={20} />;
-      case 'Network Analysis & Transcriptomics': return <Database size={20} />;
-      case 'Pipeline Development': return <PieChartIcon size={20} />;
-      case 'Data Visualization & Analytics': return <BarChart3 size={20} />;
-      case 'Omics Analysis & Data Visualization': return <BarChart3 size={20} />;
-      case 'Complete Overview from Life Science Research': return <ComputerIcon size={20} />;
-      default: return <Code size={20} />;
+      case 'Human Brain Connectome':
+        return <BrainIcon size={50} />;
+      case 'NGS Analysis':
+        return <Dna size={100} />;
+      case 'Machine Learning & Genomics':
+        return <Cpu size={50} />;
+      case 'Network Analysis & Transcriptomics':
+        return <Database size={50} />;
+      case 'Pipeline Development':
+        return <PieChartIcon size={50} />;
+      case 'Data Visualization & Analytics':
+      case 'Omics Analysis & Data Visualization':
+        return <BarChart3 size={50} />;
+      case 'Complete Overview from Life Science Research':
+        return <ComputerIcon size={50} />;
+      default:
+        return <Code size={20} />;
     }
   };
 
