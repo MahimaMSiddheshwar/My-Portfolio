@@ -74,16 +74,16 @@ const portfolioData = {
     },
     {
       id: 3,
-      title: "Bioinformatics Specialist",
-      company: "Maxgen Technologies (Client: Hetero Pharma)",
+      title: "QC Analyst",
+      company: "Biocon Biologics",
       period: "July 2021 – August 2023",
-      location: "India (Hybrid)",
+      location: "India",
       type: "Full-time",
       description:
         "Rotational role across wet-lab and dry-lab support in a pharma R&D environment; transitioned to bioinformatics support focused on expression analyses.",
       achievements: [
-        "Supported gene expression analysis and single-cell clustering/annotation using established tools and team workflows.",
-        "Interpreted marker genes to support ongoing research and preclinical studies.",
+        "Supported Data Analysis using established tools and team workflows.",
+        "Interpreted marker genes to support ongoing research and preclinical studies in R&D department.",
         "Worked within SOP-driven processes and learned GxP/GLP-aligned documentation and audit readiness basics."
       ]
     }
