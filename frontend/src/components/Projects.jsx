@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { Github, Code, Database, Cpu, BarChart3, Filter, Dna, CpuIcon, PipetteIcon, LibraryBigIcon, ComputerIcon, DatabaseIcon, BarChartHorizontalIcon, PieChartIcon, BrainIcon } from 'lucide-react';
 import portfolioData from '../data/mockData';
+import ProjectsCarousel from './ProjectsCarousel';
 
 const Projects = () => {
   const { projects = [] } = portfolioData;
   const [filter, setFilter] = useState('All');
+
+  const featuredProjects = projects.filter(project => project.featured);
 
   const categories = ['All', ...new Set(projects.map(p => p.category))];
 
@@ -49,6 +52,9 @@ const Projects = () => {
             Selected bioinformatics, genomics, and data science projects showcasing applied analysis and reproducible workflows
           </p>
         </div>
+
+        {/* Highlight reel of featured projects */}
+        <ProjectsCarousel projects={featuredProjects} getProjectIcon={getProjectIcon} />
 
         {/* Filter */}
         <div className="flex flex-wrap justify-center gap-3 mb-12">

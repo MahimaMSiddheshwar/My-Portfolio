@@ -125,6 +125,7 @@ const portfolioData = {
       title: "Mapping the Human Brain Functional Connectome",
       category: "Human Brain Connectome",
       period: "2026",
+      featured: true,
       description:
         "A network-science analysis of resting-state functional connectivity across 20 healthy adults using the ADHD-200 dataset and Destrieux cortical parcellation",
       technologies: [
@@ -148,6 +149,7 @@ const portfolioData = {
       title: " Single cell RNA sequencing analysis of a melanoma (SKCM) tumor sample treated with antiPD1 immunotherapy,",
       category: "NGS Analysis",
       period: "2026",
+      featured: true,
       description:
         "Built an end-to-end ingle-cell RNA sequencing (scRNA-seq) analysis of a melanoma (SKCM) tumor sample treated with antiPD1 immunotherapy, derived from the TISCH database (dataset: SKCM_GSE134388_aPD1).",
       technologies: [
@@ -171,6 +173,7 @@ const portfolioData = {
       title: "Spatial Transcriptomics of Human Breast Cancer",
       category: "Omics Analysis & Data Visualization",
       period: "2026",
+      featured: true,
       description:
         "A comprehensive spatial transcriptomics analysis of human breast cancer tissue using the 10x Genomics Visium platform, combining whole-transcriptome gene expression with spatial coordinates to map the tumor microenvironment (TME) directly onto tissue histology — revealing not just which cells are present, but where they are and how they communicate. Unlike bulk RNA-seq, this approach distinguishes tumor cores from invasive margins, stromal barriers, and immune infiltrates within a single tissue section.",
       technologies: ["10x Genomics Visium v1.3.0", "Scanpy v1.12", "Squidpy v1.8.1", "Python 3.13"],
@@ -202,6 +205,7 @@ const portfolioData = {
       title: "Machine Learning Pipeline for Breast Cancer Biomarker Discovery",
       category: "Machine Learning & Genomics",
       period: "2025",
+      featured: true,
       description:
         "Built an end-to-end ML workflow using public gene-expression datasets to identify candidate biomarkers for breast cancer.",
       technologies: [

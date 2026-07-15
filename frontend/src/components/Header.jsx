@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Menu, X, Download } from "lucide-react";
+import { Menu, X, Download, ExternalLink } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Header = () => {
@@ -83,6 +83,17 @@ const Header = () => {
                 Fun Facts
               </Link>
 
+              {/* Bioinformatic Insights site link */}
+              <a
+                href="https://bioinformatics-insights.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-emerald-400 px-3 py-2 text-sm font-medium transition-colors duration-200 whitespace-nowrap flex items-center gap-1"
+              >
+                Insights Hub
+                <ExternalLink size={14} />
+              </a>
+
               {/* Resume button */}
               <button
                 onClick={() => window.open("/resume.pdf", "_blank")}
@@ -127,6 +138,18 @@ const Header = () => {
               >
                 Fun Facts
               </Link>
+
+              {/* Bioinformatic Insights site link */}
+              <a
+                href="https://bioinformatics-insights.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsMenuOpen(false)}
+                className="text-white hover:text-emerald-400 flex items-center gap-1 px-3 py-2 text-base font-medium w-full text-left transition-colors duration-200 whitespace-nowrap"
+              >
+                Insights Hub
+                <ExternalLink size={14} />
+              </a>
 
               {/* Resume */}
               <button

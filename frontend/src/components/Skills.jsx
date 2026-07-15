@@ -113,7 +113,7 @@ const Skills = () => {
             const categorySkills = skills[category.name] || [];
 
             return (
-              <div key={category.name} className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+              <div key={category.name} className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                 {/* Category Header */}
                 <div
                   className={`${category.solidColor} bg-gradient-to-r ${category.color} p-6 text-white cursor-pointer`}
@@ -178,7 +178,7 @@ const Skills = () => {
         </div>
 
         {/* Skills Summary */}
-        <div className="mt-16 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-8">
+        <div className="mt-16 bg-emerald-50 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-8">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
               <div className="text-3xl font-bold text-emerald-600 mb-2">15+</div>

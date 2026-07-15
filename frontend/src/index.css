@@ -115,3 +115,8 @@ h1, h2, h3, h4, h5, h6 {
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
     "Helvetica Neue", sans-serif;
 }
+
+/* Tighter tracking on large display headings for an editorial, high-end feel */
+h1, h2 {
+  letter-spacing: -0.02em;
+}
