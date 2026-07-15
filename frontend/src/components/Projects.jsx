@@ -4,24 +4,22 @@ import portfolioData from '../data/mockData';
 import ProjectsCarousel from './ProjectsCarousel';
 
 const categoryAccents = {
-  'Human Brain Connectome': { solid: 'bg-violet-600', gradient: 'from-violet-500 to-purple-600' },
-  'NGS Analysis': { solid: 'bg-emerald-600', gradient: 'from-emerald-500 to-teal-600' },
-  'Machine Learning & Genomics': { solid: 'bg-blue-600', gradient: 'from-blue-500 to-indigo-600' },
-  'Network Analysis & Transcriptomics': { solid: 'bg-cyan-600', gradient: 'from-cyan-500 to-teal-600' },
-  'Data Visualization & Analytics': { solid: 'bg-rose-600', gradient: 'from-rose-500 to-pink-600' },
-  'Omics Analysis & Data Visualization': { solid: 'bg-rose-600', gradient: 'from-rose-500 to-pink-600' },
-  'Complete Overview from Life Science Research': { solid: 'bg-slate-700', gradient: 'from-slate-600 to-slate-800' },
-  'Pipeline Development': { solid: 'bg-amber-600', gradient: 'from-amber-500 to-orange-600' },
+  'Human Brain Connectome': { solid: 'bg-violet-600', gradient: 'from-violet-500 to-purple-600', glow: 'bg-violet-500/30', hoverShadow: 'hover:shadow-violet-500/25' },
+  'NGS Analysis': { solid: 'bg-emerald-600', gradient: 'from-emerald-500 to-teal-600', glow: 'bg-emerald-500/30', hoverShadow: 'hover:shadow-emerald-500/25' },
+  'Machine Learning & Genomics': { solid: 'bg-blue-600', gradient: 'from-blue-500 to-indigo-600', glow: 'bg-blue-500/30', hoverShadow: 'hover:shadow-blue-500/25' },
+  'Network Analysis & Transcriptomics': { solid: 'bg-cyan-600', gradient: 'from-cyan-500 to-teal-600', glow: 'bg-cyan-500/30', hoverShadow: 'hover:shadow-cyan-500/25' },
+  'Data Visualization & Analytics': { solid: 'bg-rose-600', gradient: 'from-rose-500 to-pink-600', glow: 'bg-rose-500/30', hoverShadow: 'hover:shadow-rose-500/25' },
+  'Omics Analysis & Data Visualization': { solid: 'bg-rose-600', gradient: 'from-rose-500 to-pink-600', glow: 'bg-rose-500/30', hoverShadow: 'hover:shadow-rose-500/25' },
+  'Complete Overview from Life Science Research': { solid: 'bg-slate-700', gradient: 'from-slate-600 to-slate-800', glow: 'bg-slate-500/30', hoverShadow: 'hover:shadow-slate-500/25' },
+  'Pipeline Development': { solid: 'bg-amber-600', gradient: 'from-amber-500 to-orange-600', glow: 'bg-amber-500/30', hoverShadow: 'hover:shadow-amber-500/25' },
 };
-const defaultAccent = { solid: 'bg-emerald-600', gradient: 'from-emerald-500 to-teal-600' };
+const defaultAccent = { solid: 'bg-emerald-600', gradient: 'from-emerald-500 to-teal-600', glow: 'bg-emerald-500/30', hoverShadow: 'hover:shadow-emerald-500/25' };
 
 const getAccent = (category) => categoryAccents[category] || defaultAccent;
 
 const Projects = () => {
   const { projects = [] } = portfolioData;
   const [filter, setFilter] = useState('All');
-
-  const featuredProjects = projects.filter(project => project.featured);
 
   const categories = ['All', ...new Set(projects.map(p => p.category))];
 
@@ -66,8 +64,8 @@ const Projects = () => {
           </p>
         </div>
 
-        {/* Highlight reel of featured projects */}
-        <ProjectsCarousel projects={featuredProjects} getProjectIcon={getProjectIcon} />
+        {/* Auto-advancing showcase of every project */}
+        <ProjectsCarousel projects={projects} getProjectIcon={getProjectIcon} getAccent={getAccent} />
 
         {/* Filter */}
         <div className="flex flex-wrap justify-center gap-3 mb-12">
@@ -101,7 +99,7 @@ const Projects = () => {
             return (
               <div
                 key={project.id}
-                className={`bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col ${isFeatured ? 'lg:col-span-2 lg:row-span-2' : 'sm:col-span-1 lg:col-span-2'
+                className={`bg-white rounded-xl shadow-md hover:shadow-2xl ${accent.hoverShadow} transition-all duration-300 transform hover:-translate-y-1 flex flex-col ${isFeatured ? 'lg:col-span-2 lg:row-span-2' : 'sm:col-span-1 lg:col-span-2'
                   }`}
               >
 
