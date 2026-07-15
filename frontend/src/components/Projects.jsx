@@ -3,6 +3,20 @@ import { Github, Code, Database, Cpu, BarChart3, Filter, Dna, CpuIcon, PipetteIc
 import portfolioData from '../data/mockData';
 import ProjectsCarousel from './ProjectsCarousel';
 
+const categoryAccents = {
+  'Human Brain Connectome': { solid: 'bg-violet-600', gradient: 'from-violet-500 to-purple-600' },
+  'NGS Analysis': { solid: 'bg-emerald-600', gradient: 'from-emerald-500 to-teal-600' },
+  'Machine Learning & Genomics': { solid: 'bg-blue-600', gradient: 'from-blue-500 to-indigo-600' },
+  'Network Analysis & Transcriptomics': { solid: 'bg-cyan-600', gradient: 'from-cyan-500 to-teal-600' },
+  'Data Visualization & Analytics': { solid: 'bg-rose-600', gradient: 'from-rose-500 to-pink-600' },
+  'Omics Analysis & Data Visualization': { solid: 'bg-rose-600', gradient: 'from-rose-500 to-pink-600' },
+  'Complete Overview from Life Science Research': { solid: 'bg-slate-700', gradient: 'from-slate-600 to-slate-800' },
+  'Pipeline Development': { solid: 'bg-amber-600', gradient: 'from-amber-500 to-orange-600' },
+};
+const defaultAccent = { solid: 'bg-emerald-600', gradient: 'from-emerald-500 to-teal-600' };
+
+const getAccent = (category) => categoryAccents[category] || defaultAccent;
+
 const Projects = () => {
   const { projects = [] } = portfolioData;
   const [filter, setFilter] = useState('All');
@@ -16,32 +30,31 @@ const Projects = () => {
     : projects.filter(project => project.category === filter);
 
   // Icon logic
-  const getProjectIcon = (project) => {
+  const getProjectIcon = (project, size = 50) => {
     switch (project.category) {
       case 'Human Brain Connectome':
-        return <BrainIcon size={50} />;
+        return <BrainIcon size={size} />;
       case 'NGS Analysis':
-        return <Dna size={100} />;
+        return <Dna size={size} />;
       case 'Machine Learning & Genomics':
-        return <Cpu size={50} />;
+        return <Cpu size={size} />;
       case 'Network Analysis & Transcriptomics':
-        return <Database size={50} />;
+        return <Database size={size} />;
       case 'Pipeline Development':
-        return <PieChartIcon size={50} />;
+        return <PieChartIcon size={size} />;
       case 'Data Visualization & Analytics':
       case 'Omics Analysis & Data Visualization':
-        return <BarChart3 size={50} />;
+        return <BarChart3 size={size} />;
       case 'Complete Overview from Life Science Research':
-        return <ComputerIcon size={50} />;
+        return <ComputerIcon size={size} />;
       default:
-        return <Code size={20} />;
+        return <Code size={size} />;
     }
   };
 
   return (
-    <section id="projects" className="py-20 bg-slate-50 relative overflow-hidden">
-      <div className="absolute inset-0 text-slate-400/10 science-dot-grid pointer-events-none"></div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="projects" className="py-20 bg-slate-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
         <div className="text-center mb-16">
@@ -74,74 +87,82 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        {/* Projects Bento Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 [grid-auto-flow:dense]">
           {filteredProjects.length === 0 && (
-            <div className="md:col-span-2 text-center text-slate-600">
+            <div className="sm:col-span-2 lg:col-span-4 text-center text-slate-600">
               No projects found for this category.
             </div>
           )}
 
-          {filteredProjects.map(project => (
-            <div key={project.id} className="bg-white rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1">
+          {filteredProjects.map(project => {
+            const accent = getAccent(project.category);
+            const isFeatured = project.featured;
+            return (
+              <div
+                key={project.id}
+                className={`bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col ${isFeatured ? 'lg:col-span-2 lg:row-span-2' : 'sm:col-span-1 lg:col-span-2'
+                  }`}
+              >
 
-              {/* Header */}
-              <div className="bg-emerald-600 bg-gradient-to-r from-emerald-500 to-teal-600 p-6 text-white">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex items-center gap-3">
-                    {getProjectIcon(project)}
-                    <h3 className="text-xl font-bold">{project.title}</h3>
+                {/* Header */}
+                <div className={`${accent.solid} bg-gradient-to-r ${accent.gradient} p-6 text-white`}>
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex items-center gap-3">
+                      {getProjectIcon(project, isFeatured ? 44 : 36)}
+                      <h3 className="text-lg sm:text-xl font-bold">{project.title}</h3>
+                    </div>
+                    <span className="text-xs bg-white/20 px-2 py-1 rounded-full whitespace-nowrap">{project.period}</span>
                   </div>
-                  <span className="text-xs bg-white/20 px-2 py-1 rounded-full">{project.period}</span>
-                </div>
-                <span className="inline-block text-xs bg-white/20 px-3 py-1 rounded-full">
-                  {project.category}
-                </span>
-              </div>
-
-              {/* Content */}
-              <div className="p-6">
-                <p className="text-slate-700 mb-6">{project.description}</p>
-
-                {/* Highlights */}
-                <div className="mb-6">
-                  <h4 className="font-semibold mb-3">Key Highlights</h4>
-                  <ul className="space-y-2">
-                    {project.highlights?.slice(0, 3).map((h, i) => (
-                      <li key={i} className="flex gap-2 text-sm text-slate-700">
-                        <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2" />
-                        {h}
-                      </li>
-                    ))}
-                  </ul>
+                  <span className="inline-block text-xs bg-white/20 px-3 py-1 rounded-full">
+                    {project.category}
+                  </span>
                 </div>
 
-                {/* Technologies */}
-                <div className="mb-6">
-                  <h4 className="font-semibold mb-3">Technologies</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies?.map((tech, i) => (
-                      <span key={i} className="px-2 py-1 bg-slate-100 text-xs rounded">
-                        {tech}
-                      </span>
-                    ))}
+                {/* Content */}
+                <div className="p-6 flex-1 flex flex-col">
+                  <p className="text-slate-700 mb-6">{project.description}</p>
+
+                  {/* Highlights */}
+                  <div className="mb-6">
+                    <h4 className="font-semibold mb-3">Key Highlights</h4>
+                    <ul className="space-y-2">
+                      {project.highlights?.slice(0, 3).map((h, i) => (
+                        <li key={i} className="flex gap-2 text-sm text-slate-700">
+                          <span className={`w-1.5 h-1.5 rounded-full mt-2 ${accent.solid}`} />
+                          {h}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                </div>
 
-                {/* Actions */}
-                {project.github && (
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-lg text-sm hover:bg-slate-800"
-                  >
-                    <Github size={16} /> View Code
-                  </a>
-                )}
+                  {/* Technologies */}
+                  <div className="mb-6">
+                    <h4 className="font-semibold mb-3">Technologies</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies?.map((tech, i) => (
+                        <span key={i} className="px-2 py-1 bg-slate-100 text-xs rounded">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Actions */}
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-auto inline-flex items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-lg text-sm hover:bg-slate-800 w-fit"
+                    >
+                      <Github size={16} /> View Code
+                    </a>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

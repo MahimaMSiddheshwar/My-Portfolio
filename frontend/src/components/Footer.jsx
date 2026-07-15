@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, Mail, Linkedin, Github } from 'lucide-react';
+import { Heart, Mail, Linkedin, Github, ExternalLink } from 'lucide-react';
 import portfolioData from '../data/mockData';
 
 const Footer = () => {
@@ -28,7 +28,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           {/* Brand section */}
           <div className="md:col-span-2">
-            <h3 className="text-2xl font-bold text-emerald-400 mb-4">
+            <h3 className="hero-name-gradient text-2xl font-bold mb-4">
               {personal.displayName}
             </h3>
             <p className="text-slate-300 mb-6 leading-relaxed max-w-md">
@@ -79,6 +79,15 @@ const Footer = () => {
                   {link.label}
                 </button>
               ))}
+              <a
+                href="https://bioinformatics-insights.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 text-slate-300 hover:text-emerald-400 transition-colors duration-200 text-left"
+              >
+                Insights Hub
+                <ExternalLink size={14} />
+              </a>
             </nav>
           </div>
 
@@ -109,23 +118,19 @@ const Footer = () => {
 
         {/* Specialties banner */}
         <div className="border-t border-slate-800 pt-8 mb-8">
-          <div className="flex flex-wrap justify-center gap-6 text-center">
-            <div className="flex items-center gap-2 text-emerald-400">
-              <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
-              <span className="text-sm font-medium">Bioinformatics</span>
-            </div>
-            <div className="flex items-center gap-2 text-blue-400">
-              <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-              <span className="text-sm font-medium">Genomics Analysis</span>
-            </div>
-            <div className="flex items-center gap-2 text-purple-400">
-              <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
-              <span className="text-sm font-medium">Machine Learning</span>
-            </div>
-            <div className="flex items-center gap-2 text-orange-400">
-              <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
-              <span className="text-sm font-medium">Quality Control</span>
-            </div>
+          <div className="flex flex-wrap justify-center gap-3">
+            <span className="px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-sm font-medium">
+              Bioinformatics
+            </span>
+            <span className="px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-300 text-sm font-medium">
+              Genomics Analysis
+            </span>
+            <span className="px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-sm font-medium">
+              Machine Learning
+            </span>
+            <span className="px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-300 text-sm font-medium">
+              Quality Control
+            </span>
           </div>
         </div>
 

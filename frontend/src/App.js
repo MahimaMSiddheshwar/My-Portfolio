@@ -28,21 +28,24 @@ import BlogDetail from "./pages/BlogDetail";
 // ✅ Scroll handler
 import ScrollToTop from "./components/ScrollToTop";
 
+// Scroll-triggered fade/slide reveal
+import Reveal from "./components/Reveal";
+
 function HomePage() {
   return (
     <>
       <Header />
       <main>
         <Hero />
-        <About />
-        <Experience />
-        <Projects />
-        <Skills />
-        <Resume />
-        <Blog />
-        <AchievementsTeaser />
-        <FunFactsTeaser />
-        <Contact />
+        <Reveal><About /></Reveal>
+        <Reveal><Experience /></Reveal>
+        <Reveal><Projects /></Reveal>
+        <Reveal><Skills /></Reveal>
+        <Reveal><Resume /></Reveal>
+        <Reveal><Blog /></Reveal>
+        <Reveal><AchievementsTeaser /></Reveal>
+        <Reveal><FunFactsTeaser /></Reveal>
+        <Reveal><Contact /></Reveal>
       </main>
       <Footer />
       <Toaster />

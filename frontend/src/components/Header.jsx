@@ -61,24 +61,36 @@ const Header = () => {
         }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center py-4 gap-4">
+          {/* Wordmark */}
+          <button
+            onClick={() => handleNavigation("#home")}
+            className="hero-name-gradient font-mono text-lg sm:text-xl font-bold tracking-tight whitespace-nowrap"
+          >
+            MS_
+          </button>
+
           {/* Desktop Navigation */}
-          <div className="hidden md:block w-full">
-            <div className="flex justify-center items-baseline space-x-8">
+          <div className="hidden md:flex items-center gap-6">
+            <div className="flex items-center gap-6">
               {menuItems.map((item) => (
                 <button
                   key={item.label}
                   onClick={() => handleNavigation(item.href)}
-                  className="text-white hover:text-emerald-400 px-3 py-2 text-sm font-medium transition-colors duration-200"
+                  className="text-white hover:text-emerald-400 px-1 py-2 text-sm font-medium transition-colors duration-200"
                 >
                   {item.label}
                 </button>
               ))}
+            </div>
 
+            <div className="h-4 w-px bg-slate-700"></div>
+
+            <div className="flex items-center gap-4">
               {/* Fun Facts link */}
               <Link
                 to="/funfacts"
-                className="text-white hover:text-emerald-400 px-3 py-2 text-sm font-medium transition-colors duration-200 whitespace-nowrap"
+                className="text-slate-400 hover:text-emerald-400 text-xs font-medium transition-colors duration-200 whitespace-nowrap"
               >
                 Fun Facts
               </Link>
@@ -88,21 +100,21 @@ const Header = () => {
                 href="https://bioinformatics-insights.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-emerald-400 px-3 py-2 text-sm font-medium transition-colors duration-200 whitespace-nowrap flex items-center gap-1"
+                className="text-slate-400 hover:text-emerald-400 text-xs font-medium transition-colors duration-200 whitespace-nowrap flex items-center gap-1"
               >
                 Insights Hub
-                <ExternalLink size={14} />
+                <ExternalLink size={12} />
               </a>
-
-              {/* Resume button */}
-              <button
-                onClick={() => window.open("/resume.pdf", "_blank")}
-                className="bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center gap-2"
-              >
-                <Download size={16} />
-                Resume
-              </button>
             </div>
+
+            {/* Resume button */}
+            <button
+              onClick={() => window.open("/resume.pdf", "_blank")}
+              className="bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center gap-2"
+            >
+              <Download size={16} />
+              Resume
+            </button>
           </div>
 
           {/* Mobile menu button */}

@@ -15,9 +15,8 @@ const Experience = () => {
   };
 
   return (
-    <section id="experience" className="py-20 bg-white relative overflow-hidden">
-      <div className="absolute inset-0 text-slate-400/10 science-dot-grid pointer-events-none"></div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="experience" className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-6">
