@@ -86,3 +86,32 @@ code {
     @apply bg-background text-foreground;
   }
 }
+
+/* Gradient name text with a guaranteed solid fallback color,
+   so the name never disappears if gradient-clip rendering fails */
+.hero-name-gradient {
+  color: #34d399;
+}
+
+@supports ((background-clip: text) or (-webkit-background-clip: text)) {
+  .hero-name-gradient {
+    background-image: linear-gradient(to right, #34d399, #5eead4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* Subtle dot-grid texture, evoking a sequencing plot / lab notebook grid */
+.science-dot-grid {
+  background-image: radial-gradient(currentColor 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Distinct heading font for a more polished, technical feel */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+}

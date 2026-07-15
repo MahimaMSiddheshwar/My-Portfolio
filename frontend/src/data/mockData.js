@@ -43,6 +43,36 @@ const portfolioData = {
   // Work / Research experience
   experience: [
     {
+      id: 5,
+      title: "Bioinformatics Analyst",
+      company: "Indiana University",
+      period: "May 2026 – Present",
+      location: "Indianapolis, IN, USA",
+      type: "Research",
+      description:
+        "Computational analysis of high-throughput sequencing data from human and mouse models of Acute Myeloid Leukemia (AML) and Juvenile Myelomonocytic Leukemia (JMML), spanning bulk RNA-seq, single-cell RNA-seq, and spatial transcriptomics.",
+      achievements: [
+        "Performed bulk RNA-sequencing analysis including quality control, alignment, differential expression, and pathway enrichment.",
+        "Conducted single-cell RNA-sequencing analysis covering cell-type annotation, clustering, trajectory inference, and cell-cell communication analysis.",
+        "Carried out spatial transcriptomics analysis for tissue deconvolution, spatial domain identification, and niche characterization of the leukemic microenvironment."
+      ]
+    },
+    {
+      id: 4,
+      title: "Data Analyst",
+      company: "Ecological Servants Project",
+      period: "October 2025 – May 2026",
+      location: "United States (Remote)",
+      type: "Full-time",
+      description:
+        "Managed and analyzed datasets on new invasive plant species using SQL and geospatial tools, ensuring data accuracy and clear visualization for research insights.",
+      achievements: [
+        "Managed and analyzed invasive plant species datasets using SQL and geospatial analysis tools.",
+        "Ensured data accuracy through validation and quality checks across research datasets.",
+        "Produced visualizations to support research insights and decision-making."
+      ]
+    },
+    {
       id: 1,
       title: "Bioinformatics Analyst Intern – R&D",
       company: "Elucidata Corporation",
@@ -138,12 +168,12 @@ const portfolioData = {
     },
     {
       id: 3,
-      title: "Spatial Transcriptomics of Breast Cancer Tissue",
+      title: "Spatial Transcriptomics of Human Breast Cancer",
       category: "Omics Analysis & Data Visualization",
       period: "2026",
       description:
-        "Mapping the tumor microenvironment at spatial resolution using 10x Genomics Visium resolving how cancer, stromal, and immune cells communicate across tissue space.",
-      technologies: ["Python", "Scanpy", "Squidpy", "Moran's I", "CellChatDB", "10x Genomics Visium", "Leiden Clustering"],
+        "A comprehensive spatial transcriptomics analysis of human breast cancer tissue using the 10x Genomics Visium platform, combining whole-transcriptome gene expression with spatial coordinates to map the tumor microenvironment (TME) directly onto tissue histology — revealing not just which cells are present, but where they are and how they communicate. Unlike bulk RNA-seq, this approach distinguishes tumor cores from invasive margins, stromal barriers, and immune infiltrates within a single tissue section.",
+      technologies: ["10x Genomics Visium v1.3.0", "Scanpy v1.12", "Squidpy v1.8.1", "Python 3.13"],
       highlights: [
         "ER+ Luminal A Subtype Confirmed Spatially",
         "S9 Spatially Coherent TME Domains at Resolution 0.5",

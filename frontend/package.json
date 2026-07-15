@@ -2,7 +2,6 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
   "dependencies": {
     "@radix-ui/react-toast": "^1.2.15",
     "class-variance-authority": "^0.7.1",

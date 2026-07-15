@@ -20,6 +20,7 @@ const Skills = () => {
       name: 'Bioinformatics & Omics Analysis',
       icon: <Database size={24} />,
       color: 'from-blue-500 to-indigo-600',
+      solidColor: 'bg-blue-600',
       bgColor: 'bg-blue-50',
       textColor: 'text-blue-700'
     },
@@ -27,6 +28,7 @@ const Skills = () => {
       name: 'Programming & Data Analysis',
       icon: <Code size={24} />,
       color: 'from-emerald-500 to-teal-600',
+      solidColor: 'bg-emerald-600',
       bgColor: 'bg-emerald-50',
       textColor: 'text-emerald-700'
     },
@@ -34,6 +36,7 @@ const Skills = () => {
       name: 'Visualization & Tools',
       icon: <BarChart3 size={24} />,
       color: 'from-purple-500 to-pink-600',
+      solidColor: 'bg-purple-600',
       bgColor: 'bg-purple-50',
       textColor: 'text-purple-700'
     },
@@ -41,6 +44,7 @@ const Skills = () => {
       name: 'Quality Control & Compliance',
       icon: <Shield size={24} />,
       color: 'from-orange-500 to-red-600',
+      solidColor: 'bg-orange-600',
       bgColor: 'bg-orange-50',
       textColor: 'text-orange-700'
     },
@@ -48,6 +52,7 @@ const Skills = () => {
       name: 'Laboratory Techniques',
       icon: <Microscope size={24} />,
       color: 'from-teal-500 to-cyan-600',
+      solidColor: 'bg-teal-600',
       bgColor: 'bg-teal-50',
       textColor: 'text-teal-700'
     },
@@ -55,6 +60,7 @@ const Skills = () => {
       name: 'Software & Platforms',
       icon: <Monitor size={24} />,
       color: 'from-slate-500 to-gray-600',
+      solidColor: 'bg-slate-600',
       bgColor: 'bg-slate-50',
       textColor: 'text-slate-700'
     }
@@ -87,8 +93,9 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="py-20 bg-white relative overflow-hidden">
+      <div className="absolute inset-0 text-slate-400/10 science-dot-grid pointer-events-none"></div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-6">
@@ -109,7 +116,7 @@ const Skills = () => {
               <div key={category.name} className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
                 {/* Category Header */}
                 <div
-                  className={`bg-gradient-to-r ${category.color} p-6 text-white cursor-pointer`}
+                  className={`${category.solidColor} bg-gradient-to-r ${category.color} p-6 text-white cursor-pointer`}
                   onClick={() => toggleCategory(category.name)}
                 >
                   <div className="flex items-center justify-between">

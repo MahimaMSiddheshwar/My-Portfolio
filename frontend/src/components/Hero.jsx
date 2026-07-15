@@ -6,9 +6,10 @@ const Hero = () => {
   const { personal } = portfolioData;
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900 relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center bg-slate-900 bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900 relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 text-emerald-400/10 science-dot-grid"></div>
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         <div className="absolute top-1/2 right-1/3 w-48 h-48 bg-teal-500/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
@@ -18,9 +19,13 @@ const Hero = () => {
         <div className="text-center">
           {/* Main content */}
           <div className="mb-8">
-            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight pt-20 sm:pt-28">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 mt-20 sm:mt-28 mb-6 rounded-full bg-emerald-500/10 border border-emerald-400/30 text-emerald-300 text-sm font-medium">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              Bioinformatics Analyst · Genomics · Data Science
+            </div>
+            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
               <span className="block">Hello, I'm</span>
-              <span className="bg-gradient-to-r from-emerald-400 to-teal-300 bg-clip-text text-transparent">
+              <span className="hero-name-gradient">
                 {personal.displayName}
               </span>
             </h1>

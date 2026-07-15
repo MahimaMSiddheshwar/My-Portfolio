@@ -36,8 +36,9 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-20 bg-slate-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="py-20 bg-slate-50 relative overflow-hidden">
+      <div className="absolute inset-0 text-slate-400/10 science-dot-grid pointer-events-none"></div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Header */}
         <div className="text-center mb-16">
@@ -79,7 +80,7 @@ const Projects = () => {
             <div key={project.id} className="bg-white rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1">
 
               {/* Header */}
-              <div className="bg-gradient-to-r from-emerald-500 to-teal-600 p-6 text-white">
+              <div className="bg-emerald-600 bg-gradient-to-r from-emerald-500 to-teal-600 p-6 text-white">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center gap-3">
                     {getProjectIcon(project)}
